@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 //  Global Variables  // 
 $primary-color-100: #3A0A86;
 $primary-color-200: #1D0543;
@@ -5,13 +7,21 @@ $primary-color-300: #11071F;
 $secondary-color-100: #F4F4F4;
 $secondary-color-200: #EDEDED;
 $accent-color: #9B82BF;
-$primary-font-family: Helvetica, Arial, sans-serif; 
+$primary-font-family: 'Roboto', sans-serif;
 
 //  Global Styles  // 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
 }
 
 body {
