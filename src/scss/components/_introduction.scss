@@ -21,11 +21,11 @@
     }
 
     .cube {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       position: relative;
       top: 15px;
-      right: 40px;
+      right: 100px;
       background-color: #fff;
     }
   }
@@ -46,7 +46,7 @@
       min-width: 80px;
       max-width: 150px;
       height: 80px;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
     }
   }
 }

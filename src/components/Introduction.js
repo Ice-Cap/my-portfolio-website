@@ -5,6 +5,7 @@ import sassLogo from '../images/sass-logo.png';
 import bootstrapLogo from '../images/bootstrap-logo.png';
 import phpLogo from '../images/php-logo.png';
 import postgre from '../images/postgre.png';
+import Cube from './Cube';
 
 function Introduction() {
   return (
@@ -15,7 +16,7 @@ function Introduction() {
           <p>I'm a web developer with a strong passion for building things</p>
         </div>
         <div className="cube">
-
+          <Cube />
         </div>
       </div>
       <h3 className="tools-heading">These are my favorite tools</h3>
