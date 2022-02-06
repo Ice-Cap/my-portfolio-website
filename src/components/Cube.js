@@ -5,13 +5,12 @@ import React, { useEffect } from 'react';
 
 function Cube() {
   const scene = new THREE.Scene();
-  const color1 = new THREE.Color( "rgb(58, 10, 134)" );
-  scene.background = color1;
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
 
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(200, 200);
+  const renderer = new THREE.WebGLRenderer({ alpha: true});
+  renderer.setSize(300, 300);
   renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setClearColor( 0x000000, 0 ); // the default
 
   useEffect(() => {
     document.querySelector('.cube-container').appendChild( renderer.domElement );
@@ -48,7 +47,7 @@ function Cube() {
   function animate() {
     requestAnimationFrame( animate );
     largeCube.rotation.y += 0.006;
-    smallCube.rotation.y -= 0.01;
+    smallCube.rotation.y += 0.015;
     renderer.render( scene, camera );
   }
   animate();
