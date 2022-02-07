@@ -1,5 +1,5 @@
 import Introduction from "./components/Introduction";
-import Projects from './components/projects';
+import Projects from './components/Projects';
 
 function App() {
   return (

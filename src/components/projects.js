@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectCard from './UI/ProjectCard';
 
 function Projects() {
   return (
@@ -7,72 +8,30 @@ function Projects() {
         <h2 className='center'>Projects</h2>
       </div>
       <div className="projects-container">
-        <div className="project-card">
-          <div className="thumbnail">
-            <div className="overlay">
-              <h3>Level Up</h3>
-            </div>
-          </div>
-          <p className="short-description">
-            A browser based productivity app
-          </p>
-          <div className="details">
-            <div className="buttons-container">
-              <a href="#">Preview</a>
-              <a href="#">Code</a>
-            </div>
-            <p className="technologies">
-              Built with React, Sass, Supabase and Git for version control.
-            </p>
-            <p className="full-description">
-              The purpose of this app is to help people become more productive while seeing their progress in their skills.
-            </p>
-          </div>
-        </div>
-        <div className="project-card">
-          <div className="thumbnail">
-            <div className="overlay">
-              <h3>Level Up</h3>
-            </div>
-          </div>
-          <p className="short-description">
-            A browser based productivity app
-          </p>
-          <div className="details">
-            <div className="buttons-container">
-              <a href="#">Preview</a>
-              <a href="#">Code</a>
-            </div>
-            <p className="technologies">
-              Built with React, Sass, Supabase and Git for version control.
-            </p>
-            <p className="full-description">
-              The purpose of this app is to help people become more productive while seeing their progress in their skills.
-            </p>
-          </div>
-        </div>
-        <div className="project-card">
-          <div className="thumbnail">
-            <div className="overlay">
-              <h3>Level Up</h3>
-            </div>
-          </div>
-          <p className="short-description">
-            A browser based productivity app
-          </p>
-          <div className="details">
-            <div className="buttons-container">
-              <a href="#">Preview</a>
-              <a href="#">Code</a>
-            </div>
-            <p className="technologies">
-              Built with React, Sass, Supabase and Git for version control.
-            </p>
-            <p className="full-description">
-              The purpose of this app is to help people become more productive while seeing their progress in their skills.
-            </p>
-          </div>
-        </div>
+        <ProjectCard 
+          title={'Level Up'}
+          shortDescription={'A browser based productivity app'}
+          previewLink={'#'}
+          codeLink={'https://github.com/Ice-Cap/level-up'}
+          technologiesUsed={'Built with React, Sass, Supabase, and Git for version control.'}
+          fullDescription={'The purpose of this app is to help people become more productive while seeing their progress in their skills.'}
+        />
+        <ProjectCard 
+          title={'Poké Team Builder'}
+          shortDescription={'A Pokémon team builder'}
+          previewLink={'https://poketeambuilder.io/'}
+          codeLink={'#'}
+          technologiesUsed={'Built with React, CSS, and PokeAPI.'}
+          fullDescription={'This is a pokémon team builder that helps people build better teams for competetive pokémon.'}
+        />
+        <ProjectCard 
+          title={'Super Paint'}
+          shortDescription={'A browser based drawing app'}
+          previewLink={'https://superpaint.netlify.app/'}
+          codeLink={'#'}
+          technologiesUsed={'Built with HTML, CSS, and vanilla JavaScript.'}
+          fullDescription={'This is a simple browser based drawing app created with vanilla JavaScript and the canvas API.'}
+        />
       </div>
     </section>
   )

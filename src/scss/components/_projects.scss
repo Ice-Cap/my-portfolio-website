@@ -34,7 +34,26 @@
     justify-content: space-around;
     padding-bottom: 2rem;
 
-    
+    @mixin thumbnail-styles {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .project-card:first-child .thumbnail {
+      background: url('../../images/level-up-mockup.png');
+      @include thumbnail-styles;
+    }
+
+    .project-card:nth-child(2) .thumbnail {
+      background: url('../../images/poketeambuilder-screenshot.png');
+      @include thumbnail-styles;
+    }
+
+    .project-card:last-child .thumbnail {
+      background: url('../../images/superpaint-screenshot.png');
+      @include thumbnail-styles;
+    }
 
     .project-card {
       width: 25%;
@@ -43,9 +62,7 @@
       border-radius: 8px;
       border: 1px solid gray;
      
-
       .thumbnail {
-        background: url('../../images/level-up-mockup.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
