@@ -10,7 +10,7 @@ function Cube() {
     const maxSpeed = 0.015;
 
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(300, 300);
