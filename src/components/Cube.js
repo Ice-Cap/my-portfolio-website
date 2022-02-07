@@ -1,15 +1,14 @@
 import * as THREE from 'three';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function Cube() {
   const cubeRef = useRef(null);
   let scene, camera, renderer, largeCube, smallCube;
 
   useEffect(() => { 
-    let delta = 0.007;
-    const maxSpeed = 0.05;
-    console.log(cubeRef.current.getBoundingClientRect());
-    
+    let delta = 0.006;
+    const maxSpeed = 0.015;
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
 
@@ -36,17 +35,28 @@ function Cube() {
     }
     animate();
 
-    function handleMouseMove() {
-      delta += 0.0001;
-      if (delta > maxSpeed) {
-        delta = maxSpeed;
+    function handleMouseMove(e) {
+      if (e.movementX > 0) {
+        delta += 0.0003;
+        if (delta > maxSpeed) {
+          delta = maxSpeed;
+        }
+        largeCube.rotation.y += delta;
+      } else {
+        delta += 0.0003;
+        if (delta > maxSpeed) {
+          delta = maxSpeed + maxSpeed;
+        }
+        largeCube.rotation.y -= delta;
       }
-      largeCube.rotation.y += delta;
     }
   
     document.body.addEventListener('mousemove', handleMouseMove);
     
-    return () => cubeRef.current.removeChild(renderer.domElement);
+    return () => {
+      cubeRef.current.removeChild(renderer.domElement) ;
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   function createCube(size) {
