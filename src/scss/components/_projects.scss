@@ -1,5 +1,7 @@
 #projects {
   background-color: $primary-color-300;
+  position: relative;
+  overflow: hidden;
 
   .section-heading {
     padding: 2rem;
@@ -28,7 +30,41 @@
     }
   }
 
+  .background-design {
+    position: absolute;
+    top: 35%;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #fff;
+    height: 300px;
+    opacity: .75;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      z-index: 0;
+      width: 98%;
+      margin: 0 1%;
+      border: 1px solid $accent-color;
+      height: 300px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20%;
+      z-index: 0;
+      width: 98%;
+      margin: 0 1%;
+      border: 1px solid $accent-color;
+      height: 300px;
+    }
+  }
+
   .projects-container {
+    position: relative;
+    z-index: 2;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -61,6 +97,7 @@
       background-color: $secondary-color-200;
       border-radius: 8px;
       border: 1px solid gray;
+      box-shadow: 0 0 8px #9b82bf42;
      
       .thumbnail {
         background-repeat: no-repeat;
@@ -106,6 +143,12 @@
             border: 1px solid $primary-color-100;
             border-radius: 20px;
             text-decoration: none;
+            background-color: rgb(247, 247, 247);
+
+            &:hover {
+              background-color: rgba(247, 247, 247, 0);
+              // color: #fff;
+            }
           }
         }
 

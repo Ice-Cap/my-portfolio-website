@@ -7,6 +7,7 @@ function Projects() {
       <div className="section-heading">
         <h2 className='center'>Projects</h2>
       </div>
+      <div className="background-design"></div>
       <div className="projects-container">
         <ProjectCard 
           title={'Level Up'}
@@ -14,7 +15,7 @@ function Projects() {
           previewLink={'#'}
           codeLink={'https://github.com/Ice-Cap/level-up'}
           technologiesUsed={'Built with React, Sass, Supabase, and Git for version control.'}
-          fullDescription={'The purpose of this app is to help people become more productive while seeing their progress in their skills.'}
+          fullDescription={'The purpose of this app is to help people see progress within their skills.'}
         />
         <ProjectCard 
           title={'Poké Team Builder'}
