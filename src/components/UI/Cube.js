@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, { useEffect, useRef } from 'react';
 
-function Cube() {
+function Cube(props) {
   const cubeRef = useRef(null);
   let scene, camera, renderer, largeCube, smallCube;
 
@@ -69,7 +69,7 @@ function Cube() {
         widthSegments, heightSegments, depthSegments);
     const edges = new THREE.EdgesGeometry(boxGeometry);
 
-    const cube = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+    const cube = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: props.color } ));
 
     return cube;
   }  

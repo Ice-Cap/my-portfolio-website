@@ -17,7 +17,7 @@ function Introduction() {
           <p>I'm a web developer with a strong passion for building things</p>
         </div>
         <div className="cube">
-          <Cube />
+          <Cube color={0xffffff} />
         </div>
       </div>
       <h3 className="tools-heading">These are my favorite tools</h3>
