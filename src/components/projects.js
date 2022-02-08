@@ -21,7 +21,7 @@ function Projects() {
           title={'Poké Team Builder'}
           shortDescription={'A Pokémon team builder'}
           previewLink={'https://poketeambuilder.io/'}
-          codeLink={'#'}
+          codeLink={'https://github.com/Ice-Cap/poke-team-builder'}
           technologiesUsed={'Built with React, CSS, and PokeAPI.'}
           fullDescription={'This is a pokémon team builder that helps people build better teams for competetive pokémon.'}
         />
@@ -29,7 +29,7 @@ function Projects() {
           title={'Super Paint'}
           shortDescription={'A browser based drawing app'}
           previewLink={'https://superpaint.netlify.app/'}
-          codeLink={'#'}
+          codeLink={'https://github.com/Ice-Cap/super-paint'}
           technologiesUsed={'Built with HTML, CSS, and vanilla JavaScript.'}
           fullDescription={'This is a simple browser based drawing app created with vanilla JavaScript and the canvas API.'}
         />
