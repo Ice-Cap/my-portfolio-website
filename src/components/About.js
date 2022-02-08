@@ -5,17 +5,22 @@ function About() {
   return (
     <section id="about">
       <div className="section-heading">
-        <h2>About</h2>
+        <h2>About Me</h2>
       </div>
       <div className="content">
         <div className="paragraphs">
           <p>
-            I'm a web developer with 2 years of experience building custom websites using technologies like HTML, CSS, JavaScript, PHP, WordPress, and React. My main focus is to build websites that provide real-world value for my clients. I write all of my code semantically to ensure it's optimized for SEO and I code my websites to be fully mobile responsive and cross-browser compatible as well.
+            I graduated from the Digital Media Design program at the DATC in June of 2020. Throughout the program, I learned design principles, HTML, CSS, JavaScript, PHP, WordPress, and React, along with programs in the Adobe suite. Since graduating I have learned deeper concepts of JavaScript and React, SQL, how to utilize databases with PHP and Supabase, HTTP methods, the basics of server functionality, and loading data effectively from APIs.
           </p>
           <p>
-            I'm a web developer with 2 years of experience building custom websites using technologies like HTML, CSS, JavaScript, PHP, WordPress, and React. My main focus is to build websites that provide real-world value for my clients. I write all of my code semantically to ensure it's optimized for SEO and I code my websites to be fully mobile responsive and cross-browser compatible as well.
+            The most important thing I've learned is how to learn more effeciently. There have been many times I've had to do something that I had next to no knowledge about, but I've always been able to learn the concept quickly and keep moving forward.
           </p>
-          <a href='https://icecapmedia.com/wp-content/uploads/2022/02/web-dev-resume_2022.pdf'>My Resume</a>
+          <p>
+            In mid 2021 I began doing freelance web development through Upwork and my own business, Ice Cap Media. During this time I made websites from scratch for clients and worked on some established websites as well. I gained invaluable experience during this time. Some of the most important concepts I learned were how to communicate technical concepts effectively, how to build complex designs based on mockups designed by someone else, and how to manage time effeciently in order to meet deadlines proposed by clients. 
+          </p>
+          <a href='https://icecapmedia.com/wp-content/uploads/2022/02/web-dev-resume_2022.pdf' target="_blank" rel="noopener noreferrer">
+            My Resume
+          </a>
         </div>
         <div className="cube">
           <Cube color={0x1D0543} />
