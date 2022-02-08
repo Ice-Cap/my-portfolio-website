@@ -6,7 +6,7 @@ import sassLogo from '../images/sass-logo.png';
 import bootstrapLogo from '../images/bootstrap-logo.png';
 import phpLogo from '../images/php-logo.png';
 import postgre from '../images/postgre.png';
-import Cube from './Cube';
+import Cube from './UI/Cube';
 
 function Introduction() {
   return (

@@ -4,28 +4,9 @@
   overflow: hidden;
 
   .section-heading {
-    padding: 2rem;
-
     h2 {
-      border: 1px solid #fff;
-      text-align: center;
-      width: 250px;
-      padding: .9rem;
-      position: relative;
-      z-index: 20;
-
       &::after {
         content: 'Projects';
-        position: absolute;
-        z-index: 1;
-        right: 10px;
-        bottom: 10px;
-        border: 1px solid #fff;
-        text-align: center;
-        width: 220px;
-        padding: .8rem;
-        height: 25px;
-        background-color: $primary-color-300;
       }
     }
   }

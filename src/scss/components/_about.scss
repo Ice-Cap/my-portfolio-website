@@ -1,0 +1,44 @@
+#about {
+  padding: 2rem 3rem;
+  background-color: $secondary-color-100;
+
+  .section-heading {
+    h2 {
+      border: 1px solid $primary-color-200;
+
+      &::after {
+        content: 'About Me';
+        position: absolute;
+        border: 1px solid $primary-color-200;
+        color: $primary-color-200;
+        background-color: $secondary-color-100;
+      }
+    }
+  }
+
+  .content {
+    padding: .5rem 1rem;
+
+    .paragraphs {
+      color: $primary-color-200;
+      width: 50%;
+
+      p {
+        &:first-child {
+          padding-top: 0;
+        }
+        padding: .75rem .2rem;
+      }
+
+      a {
+        margin-top: 1.25rem;
+        background: linear-gradient($primary-color-100, $primary-color-200);
+        color: #fff;
+        text-decoration: none;
+        padding: .5rem 2rem;
+        border-radius: 50px;
+        display: inline-block;
+      }
+    }
+  }
+}
