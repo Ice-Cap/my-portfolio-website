@@ -9,7 +9,7 @@
     .contact-container {
       .section-heading {
         h2 {
-          margin-bottom: 1.5rem;
+          margin-bottom: 0;
           &::after {
             content: 'Contact Me';
             background-color: $primary-color-200;
@@ -18,11 +18,33 @@
       }
 
       form {
-        input, button {
-          display: block;
-          margin: 1rem;
+        padding-left: 2rem;
+        width: 280px;
+
+        .form-input-container {
+          padding: 10px 0;
+
+          label, input, textarea {
+            width: 250px;
+            display: block;
+          }
+
+          input, textarea {
+            padding: 5px;
+            margin-top: 6px;
+            font-size: 1rem;
+            font-family: $primary-font-family;
+          }
+        }
+
+        button {
+          float: right;
+          border-radius: 50px;
+          padding: .25rem 1rem;
+          border: 1px solid gray;
         }
       }
+
     }
 
     .socials-container {
