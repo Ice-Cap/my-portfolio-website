@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import jsLogo from '../images/javascript-logo.png';
 import reactLogo from '../images/react-logo.png';
 import gitLogo from '../images/git-logo.png';
