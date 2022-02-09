@@ -1,0 +1,49 @@
+#contact {
+  background-color: $primary-color-200;
+  padding: 2rem 3rem;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+
+    .contact-container {
+      .section-heading {
+        h2 {
+          margin-bottom: 1.5rem;
+          &::after {
+            content: 'Contact Me';
+            background-color: $primary-color-200;
+          }
+        }
+      }
+
+      form {
+        input, button {
+          display: block;
+          margin: 1rem;
+        }
+      }
+    }
+
+    .socials-container {
+      .section-heading {
+        h2 {
+          margin-bottom: 1.5rem;
+          &::after {
+            content: 'Socials';
+            background-color: $primary-color-200;
+          }
+        }
+      }
+
+      .social-logos {
+        width: 100%;
+        height: 100px;
+        background-color: gray;
+      }
+    }
+
+  }
+
+
+}

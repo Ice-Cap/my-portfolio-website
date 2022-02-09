@@ -43,6 +43,10 @@
         padding: .5rem 2rem;
         border-radius: 50px;
         display: inline-block;
+
+        &:hover {
+          background: linear-gradient(lighten($primary-color-100, 5%), lighten($primary-color-200, 15%));
+        }
       }
     }
 
