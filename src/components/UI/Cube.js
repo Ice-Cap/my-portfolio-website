@@ -13,7 +13,7 @@ function Cube(props) {
     camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(300, 300);
+    renderer.setSize(props.size, props.size);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 0);
     cubeRef.current.appendChild( renderer.domElement );

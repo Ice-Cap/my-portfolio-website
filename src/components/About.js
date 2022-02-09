@@ -23,7 +23,7 @@ function About() {
           </a>
         </div>
         <div className="cube">
-          <Cube color={0x1D0543} />
+          <Cube color={0x1D0543} size={350} />
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@
       a {
         margin-top: 1.25rem;
         margin-left: .5rem;
-        background: linear-gradient($primary-color-100, $primary-color-200);
+        background: linear-gradient($primary-color-100, lighten($primary-color-200, 10%));
         color: #fff;
         text-decoration: none;
         padding: .5rem 2rem;
@@ -47,8 +47,8 @@
     }
 
     .cube {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
       position: relative;
       bottom: 50px;
       right: 50px;

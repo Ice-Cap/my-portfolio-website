@@ -2,9 +2,11 @@
   background-color: $primary-color-300;
   position: relative;
   overflow: hidden;
+  padding: 1rem 0;
 
   .section-heading {
     h2 {
+      margin-bottom: 1.5rem;
       &::after {
         content: 'Projects';
       }
@@ -18,7 +20,7 @@
     width: 100%;
     border: 1px solid #fff;
     height: 300px;
-    opacity: .9;
+    opacity: .5;
 
     &::before {
       content: "";
@@ -75,11 +77,17 @@
     .project-card {
       width: 25%;
       height: 500px;
-      background-color: $secondary-color-200;
+      background-color: darken($secondary-color-200, 5%);
       border-radius: 12px;
       border: 2px solid rgb(49, 49, 49);
-      box-shadow: 0 0 10px #9b82bf4b;
+      box-shadow: 0 0 8px #9b82bf31;
       overflow: hidden;
+      transition: transform 0.2s ease-out;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px #9b82bf36;
+      }
      
       .thumbnail {
         height: 200px;
@@ -90,7 +98,7 @@
           align-items: center;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.568);
+          background: rgba(0, 0, 0, 0.692);
 
           h3 {
             font-size: 2rem;
@@ -121,10 +129,10 @@
             color: #4A18BC;
             border-radius: 20px;
             text-decoration: none;
-            background-color: rgb(247, 247, 247);
+            background-color: rgba(247, 247, 247, 0);
 
             &:hover {
-              background-color: rgba(247, 247, 247, 0);
+              background-color: adjust-color($accent-color, $alpha: -0.9);
             }
           }
         }

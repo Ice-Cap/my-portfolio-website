@@ -13,8 +13,8 @@ function ProjectCard(props) {
       </p>
       <div className="details">
         <div className="buttons-container">
-          <a href={props.previewLink}>Preview</a>
-          <a href={props.codeLink}>Code</a>
+          <a href={props.previewLink} target="_blank" rel="noopener noreferrer">Preview</a>
+          <a href={props.codeLink} target="_blank" rel="noopener noreferrer">Code</a>
         </div>
         <p className="technologies">
           {props.technologiesUsed}
