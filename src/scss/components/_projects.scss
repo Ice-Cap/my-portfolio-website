@@ -152,4 +152,28 @@
       }
     }
   }
+
+  //  Phones  // 
+  @media screen and (max-width: 500px) {
+    .background-design {
+      display: none;
+    }
+
+    .projects-container {
+      width: 80%;
+      margin: 0 auto;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .project-card {
+        width: 100%;
+        margin-bottom: 60px;
+      }
+
+      .project-card:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

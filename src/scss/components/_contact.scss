@@ -93,4 +93,17 @@
       }
     }
   }
+
+  @media screen and (max-width: 500px) {
+
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .contact-container {
+        padding-bottom: 2rem;
+      }
+    }
+  }
 }
