@@ -16,6 +16,10 @@ $primary-font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
+section {
+  overflow: hidden;
+}
+
 .center {
   margin: 0 auto;
 }

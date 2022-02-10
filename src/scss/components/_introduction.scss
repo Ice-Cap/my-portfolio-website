@@ -1,6 +1,6 @@
 #introduction {
   background: linear-gradient($primary-color-100, $primary-color-200);
-  padding-bottom: 2rem;
+  padding-bottom: 3.5rem;
 
   .github-logo {
     width: 40px;
@@ -70,6 +70,59 @@
 
       &:hover {
         transform: scale(1.055);
+      }
+    }
+  }
+
+  //  Phones  //
+  @media screen and (max-width: 700px) {
+    .github-logo {
+      left: 1.3rem;
+    }
+
+    .top-container {
+      margin-top: 1.8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1.3rem;
+
+      .heading-container {
+        h1 {
+          padding-bottom: .2rem;
+          font-size: 2rem;
+        }
+  
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .cube {
+        top: 15px;
+        right: 0;
+      }
+    }
+
+    .tools-heading {
+      font-size: 1.5rem;
+    }
+
+    .tools {
+      padding: 1rem;
+
+      .text-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      img {
+        min-width: 30px !important;
+        max-width: 50px !important;
+        height: auto;
+        margin: 5px 12px;
       }
     }
   }
