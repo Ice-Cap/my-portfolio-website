@@ -74,7 +74,16 @@
     }
   }
 
-  //  Phones  //
+  //  Tablets  // 
+  @media screen and (max-width: 820px) {
+    .top-container {
+      .cube {
+        right: 20px;
+      }
+    }
+  }
+
+  //  Small Screens  //
   @media screen and (max-width: 700px) {
     .github-logo {
       left: 1.3rem;
@@ -124,6 +133,31 @@
         height: auto;
         margin: 5px 12px;
       }
+    }
+  }
+
+
+  //  Desktop Screens  //
+  @media screen and (min-width: 1320px) {
+    .github-logo {
+      left: 5%;
+    }
+
+    .top-container {
+      padding-left: 5%;
+    }
+  }
+
+
+  //  Extra Large Desktop Screens  // 
+  @media screen and (min-width: 1800px) {
+    .github-logo {
+      left: 8%;
+      top: 40px;
+    }
+
+    .top-container {
+      padding: 0 10% 2.5rem 8%;
     }
   }
 }

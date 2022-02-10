@@ -11,7 +11,7 @@ function Contact() {
           <div className="section-heading">
             <h2>Contact</h2>
           </div>
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true" autocomplete="off">
             <div className="form-input-container">
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" />

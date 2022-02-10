@@ -153,14 +153,44 @@
     }
   }
 
-  //  Phones  // 
-  @media screen and (max-width: 500px) {
+  //  Tablets  //
+  @media screen and (max-width: 820px) {
+    .projects-container {
+      .project-card {
+        width: 32%;
+      }
+
+      .overlay h3 {
+        font-size: 1.5rem !important;
+      }
+
+      .short-description {
+        font-size: .8rem !important;
+      }
+
+      .buttons-container {
+        font-size: .8rem;
+
+        a {
+          min-width: 100px !important;
+        }
+      }
+
+      .full-description {
+        font-size: .9rem;
+      }
+    }
+  }
+
+  //  Small Screens  // 
+  @media screen and (max-width: 700px) {
     .background-design {
       display: none;
     }
 
     .projects-container {
       width: 80%;
+      max-width: 350px;
       margin: 0 auto;
       flex-direction: column;
       justify-content: space-around;
@@ -173,6 +203,29 @@
 
       .project-card:last-child {
         margin-bottom: 10px;
+      }
+    }
+  }
+
+  //  Large Desktop Screens  //
+  @media screen and (min-width: 1500px) {
+    .projects-container {
+      width: 95%;
+      margin: 0 auto;
+
+      .project-card {
+        width: 22%;
+      }
+    }
+  }
+
+  //  Extra Large Desktop Screens  //
+  @media screen and (min-width: 1800px) {
+    .projects-container {
+      width: 90%;
+
+      .project-card {
+        width: 21%;
       }
     }
   }
