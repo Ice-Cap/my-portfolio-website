@@ -1,5 +1,6 @@
 import Introduction from "./components/Introduction";
-import Projects from './components/Projects';
+import PersonalProjects from './components/PersonalProjects';
+import ProfessionalProjects from './components/ProfessionalProjects';
 import About from './components/About';
 import Contact from './components/Contact';
 
@@ -7,7 +8,8 @@ function App() {
   return (
     <main>
       <Introduction />
-      <Projects />
+      <PersonalProjects />
+      <ProfessionalProjects />
       <About />
       <Contact />
     </main>

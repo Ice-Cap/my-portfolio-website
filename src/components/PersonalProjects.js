@@ -1,18 +1,18 @@
 import React from 'react';
 import ProjectCard from './UI/ProjectCard';
 
-function Projects() {
+function PersonalProjects() {
   return (
-    <section id="projects">
+    <section id="personal-projects" className="projects">
       <div className="section-heading">
-        <h2 className='center'>Projects</h2>
+        <h2 className='center personal-projects'>Personal Projects</h2>
       </div>
       <div className="background-design"></div>
       <div className="projects-container">
         <ProjectCard 
           title={'Level Up'}
           shortDescription={'A browser based productivity app'}
-          previewLink={'#'}
+          previewLink={'https://github.com/Ice-Cap/level-up'}
           codeLink={'https://github.com/Ice-Cap/level-up'}
           technologiesUsed={'Built with React, Sass, Supabase, and Git for version control.'}
           fullDescription={'The purpose of this app is to help people see progress within their skills.'}
@@ -38,4 +38,4 @@ function Projects() {
   )
 }
 
-export default Projects;
+export default PersonalProjects;
