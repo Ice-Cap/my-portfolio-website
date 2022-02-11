@@ -12,7 +12,7 @@ function Contact() {
             <h2>Contact</h2>
           </div>
 
-          <form name="contact" method="POST" data-netlify="true" autocomplete="off" onSubmit="submit">
+          <form name="contact" method="POST" autocomplete="off" >
             <input type="hidden" name="form-name" value="contact" />
 
             <div className="form-input-container">
