@@ -35,5 +35,17 @@
     .project-card .thumbnail .overlay h3 {
       font-size: 1.5rem;
     }
+
+    .project-card {
+      .details .buttons-container {
+        a {
+          width: 80%;
+        }
+        a:last-child {
+          display: none;
+        }
+      }
+      
+    }
   }
 }
