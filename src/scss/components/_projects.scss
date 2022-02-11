@@ -13,6 +13,7 @@
     border: 1px solid #fff;
     height: 300px;
     opacity: .6;
+    animation: blink 2s ease-in-out 2.5s infinite alternate forwards;
 
     &::before {
       content: "";
@@ -23,6 +24,7 @@
       margin: 0 1.5%;
       border: 1px solid $accent-color;
       height: 300px;
+      animation: blink 2s ease-in-out 1.5s infinite alternate forwards;
     }
 
     &::after {
@@ -34,6 +36,17 @@
       margin: 0 1.5%;
       border: 1px solid $accent-color;
       height: 300px;
+      animation: blink 2s ease-in-out infinite alternate forwards;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0.4;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 
