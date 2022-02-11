@@ -18,17 +18,17 @@
     }
 
     .project-card:first-child .thumbnail {
-      background: url('../../images/level-up-mockup.png');
+      background: url('../../images/investing-lynx.png');
       @include thumbnail-styles;
     }
 
     .project-card:nth-child(2) .thumbnail {
-      background: url('../../images/poketeambuilder-screenshot.png');
+      background: url('../../images/brave-submarines.png');
       @include thumbnail-styles;
     }
 
     .project-card:last-child .thumbnail {
-      background: url('../../images/superpaint-screenshot.png');
+      background: url('../../images/thelotusandthelion.png');
       @include thumbnail-styles;
     }
 
