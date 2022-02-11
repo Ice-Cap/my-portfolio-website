@@ -14,7 +14,7 @@ function PersonalProjects() {
           shortDescription={'A browser based productivity app'}
           previewLink={'https://github.com/Ice-Cap/level-up'}
           codeLink={'https://github.com/Ice-Cap/level-up'}
-          technologiesUsed={'Built with React, Sass, Supabase, and Git for version control.'}
+          technologiesUsed={'Built with React, Redux, Sass, Supabase, and Git for version control.'}
           fullDescription={'The purpose of this app is to help people see progress within their skills.'}
         />
         <ProjectCard 
