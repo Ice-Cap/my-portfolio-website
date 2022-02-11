@@ -11,21 +11,28 @@ function Contact() {
           <div className="section-heading">
             <h2>Contact</h2>
           </div>
-          <form name="contact" method="POST" data-netlify="true" autocomplete="off">
+
+          <form name="contact" method="POST" data-netlify="true" autocomplete="off" onSubmit="submit">
+            <input type="hidden" name="form-name" value="contact" />
+
             <div className="form-input-container">
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" />
             </div>
+
             <div className="form-input-container">
               <label htmlFor="subject">Subject</label>
               <input type="text" id="subject" name="subject" />
             </div>
+
             <div className="form-input-container">
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
-            <button>Send</button>
+
+            <button type="submit">Send</button>
           </form>
+
         </div>
         <div className="socials-container">
           <div className="section-heading">
