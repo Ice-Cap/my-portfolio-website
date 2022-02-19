@@ -12,7 +12,7 @@ function PersonalProjects() {
         <ProjectCard 
           title={'Level Up'}
           shortDescription={'A browser based productivity app'}
-          previewLink={'https://github.com/Ice-Cap/level-up'}
+          previewLink={'https://demo.leveluptimetracker.com/'}
           codeLink={'https://github.com/Ice-Cap/level-up'}
           technologiesUsed={'Built with React, Redux, Sass, Supabase, and Git for version control.'}
           fullDescription={'The purpose of this app is to help people see progress within their skills.'}
