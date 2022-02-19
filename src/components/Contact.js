@@ -17,17 +17,17 @@ function Contact() {
 
             <div className="form-input-container">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
+              <input type="email" id="email" name="email" required />
             </div>
 
             <div className="form-input-container">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" />
+              <input type="text" id="subject" name="subject" required />
             </div>
 
             <div className="form-input-container">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <label htmlFor="message" >Message</label>
+              <textarea name="message" id="message" rows="4" required minlength="20"></textarea>
             </div>
 
             <button type="submit">Send</button>
