@@ -1,5 +1,6 @@
 import React from 'react';
 import Cube from './UI/Cube';
+import resume from '../images/web-dev-resume_2022_V2.pdf';
 
 function About() {
   return (
@@ -18,7 +19,7 @@ function About() {
           <p>
             In mid 2021 I began doing freelance web development through Upwork and my own business, Ice Cap Media. During this time I made websites from scratch for clients and worked on some established websites as well. I gained invaluable experience during this time. Some of the most important concepts I learned were how to communicate technical concepts effectively, how to build complex designs based on mockups designed by someone else, and how to manage time effeciently in order to meet deadlines proposed by clients. 
           </p>
-          <a href='https://icecapmedia.com/wp-content/uploads/2022/02/web-dev-resume_2022.pdf' target="_blank" rel="noopener noreferrer">
+          <a href={resume} target="_blank" rel="noopener noreferrer">
             My Resume
           </a>
         </div>
