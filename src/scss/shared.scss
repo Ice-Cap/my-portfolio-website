@@ -60,6 +60,18 @@ body {
   }
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 95%;
+  }
+}
+
 //  Parials  //
 @import './components/introduction.scss';
 @import './components/projects.scss';

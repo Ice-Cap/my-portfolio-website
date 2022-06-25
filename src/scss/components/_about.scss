@@ -1,5 +1,5 @@
 #about {
-  padding: 2rem 3rem;
+  padding: 2rem 0;
   background-color: $secondary-color-100;
 
   .section-heading {
@@ -103,13 +103,13 @@
 
   //  Desktop Screens  //
   @media screen and (min-width: 1320px) {
-    padding-left: 5%;
+    padding-left: 0;
   }
 
 
   //  Extra Large Desktop Screens  //
   @media screen and (min-width: 1800px) {
-    padding-left: 8%;
-    padding-right: 10%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

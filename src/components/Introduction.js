@@ -12,18 +12,21 @@ import githubMark from '../images/GitHub-Mark-Light-120px-plus.png';
 function Introduction() {
   return (
     <section id="introduction" >
-      <div className="github-logo">
-        <a href="https://github.com/Ice-Cap" target="_blank" rel="noopener noreferrer">
-          <img src={githubMark} alt="Github logo" />
-        </a>
-      </div>
-      <div className="top-container">
-        <div className="heading-container">
-          <h1>Hi, my name is Canyon</h1>
-          <p>I'm a web developer with a strong passion for building things</p>
+    
+      <div className="top-container container">
+        <div className="github-logo">
+          <a href="https://github.com/Ice-Cap" target="_blank" rel="noopener noreferrer">
+            <img src={githubMark} alt="Github logo" />
+          </a>
         </div>
-        <div className="cube">
-          <Cube color={0xffffff} size={300} />
+        <div className='heading-and-cube'>
+          <div className="heading-container">
+            <h1>Hi, my name is Canyon</h1>
+            <p>I'm a web developer with a strong passion for building things</p>
+          </div>
+          <div className="cube">
+            <Cube color={0xffffff} size={300} />
+          </div>
         </div>
       </div>
       <h3 className="tools-heading">These are my favorite tools</h3>
