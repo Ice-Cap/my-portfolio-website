@@ -1,6 +1,6 @@
 import React from 'react';
 import Cube from './UI/Cube';
-import resume from '../images/web-dev-resume_2022_V4.pdf';
+import resume from '../images/web-dev-resume_2022_V5.pdf';
 
 function About() {
   return (
