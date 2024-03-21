@@ -1,6 +1,6 @@
 import React from 'react';
 import Cube from './UI/Cube';
-import resume from '../images/web-dev-resume_2022_V6.pdf';
+import resume from '../images/Resume-2024.pdf';
 
 function About() {
   return (
@@ -16,7 +16,7 @@ function About() {
             </p>
             <p>
               The most important thing I've learned is how to learn more effeciently. There have been many times I've had to do something that I had next to no knowledge about, but I've always been able to learn the concept quickly and keep moving forward.
-            </p>
+            </p> 
             <p>
               In mid 2021 I began doing freelance web development through Upwork and my own business, Ice Cap Media. During this time I made websites from scratch for clients and worked on some established websites as well. I gained invaluable experience during this time. Some of the most important concepts I learned were how to communicate technical concepts effectively, how to build complex designs based on mockups designed by someone else, and how to manage time effeciently in order to meet deadlines proposed by clients. 
             </p>
