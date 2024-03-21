@@ -1,36 +1,37 @@
 #personal-projects {
 
-  .section-heading {
-    h2 {
-      width: 300px;
-      margin-bottom: 1.5rem;
-      &::after {
-        width: 280px;
-        content: 'Personal Projects';
-      }
-    }
-  }
+    .section-heading {
+        h2 {
+            width: 300px;
+            margin-bottom: 1.5rem;
 
-  .projects-container {
-    @mixin thumbnail-styles {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+            &::after {
+                width: 280px;
+                content: 'Personal Projects';
+            }
+        }
     }
 
-    .project-card:first-child .thumbnail {
-      background: url('../../images/level-up-mockup.png');
-      @include thumbnail-styles;
-    }
+    .projects-container {
+        @mixin thumbnail-styles {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
 
-    .project-card:nth-child(2) .thumbnail {
-      background: url('../../images/poketeambuilder-screenshot.png');
-      @include thumbnail-styles;
-    }
+        .project-card:first-child .thumbnail {
+            background: url('../../images/level-up-live.png');
+            @include thumbnail-styles;
+        }
 
-    .project-card:last-child .thumbnail {
-      background: url('../../images/superpaint-screenshot.png');
-      @include thumbnail-styles;
+        .project-card:nth-child(2) .thumbnail {
+            background: url('../../images/poketeambuilder-screenshot.png');
+            @include thumbnail-styles;
+        }
+
+        .project-card:last-child .thumbnail {
+            background: url('../../images/superpaint-screenshot.png');
+            @include thumbnail-styles;
+        }
     }
-  }
 }
