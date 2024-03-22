@@ -9,9 +9,9 @@ function App() {
     return (
         <main>
             {/* <Introduction /> */}
+            {/* <PersonalProjects /> */}
             <Algorithms />
-            {/* <PersonalProjects />
-            <ProfessionalProjects /> */}
+            {/* <ProfessionalProjects /> */}
             {/* <About /> */}
             <Contact />
         </main>

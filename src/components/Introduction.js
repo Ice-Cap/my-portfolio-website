@@ -36,7 +36,6 @@ function Introduction() {
           <img src={reactLogo} alt="React Logo"/>
           <img src={gitLogo} alt="Git Logo"/>
           <img src={sassLogo} alt="Sass Logo"/>
-          <img src={bootstrapLogo} alt="Bootstrap Logo"/>
           <img src={phpLogo} alt="PHP Logo"/>
           <img src={postgre} alt="PostgreSQL Logo"/>
         </div>

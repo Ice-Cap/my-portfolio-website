@@ -16,18 +16,35 @@
             }
         }
     }
-    .item {
-        margin-right: 5px;
+
+    h3 {
+        font-size: 30px;
+        color: $primary-color-200;
+        margin-bottom: 16px;
     }
+
+    .array-container {
+        width: fit-content;
+    }
+
+    .item {
+        border: 1px solid $primary-color-100;
+        color: $primary-color-100;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+
     .check-swap {
         font-weight: bold;
-        color: #000;
+        color: #fff;
+        background-color: $primary-color-100;
         text-decoration: underline;
     }
 
     button {
         color: #fff;
-        margin-left: 10px;
+        margin-top: 24px;
+        margin-right: 10px;
         background-color: $primary-color-200;
         border: none;
         padding: 4px 14px;

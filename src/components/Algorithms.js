@@ -14,11 +14,16 @@ function Algorithms() {
                 <div className="section-heading">
                     <h2>Algorithms</h2>
                 </div>
-                <p>Array to sort</p>
+                {/* <h3>Array to sort</h3>
                 {arrayToSort.join(', ')}
                 <br/>
-                <br />
-                <Algorithm title="Bubble sort" array={arrayToSort} reset={reset}/>
+                <br /> */}
+                <Algorithm 
+                    title="Bubble sort" 
+                    array={arrayToSort} 
+                    reset={reset}
+                    type={'bubble'}
+                />
             </div>
         </section>
     );

@@ -16,7 +16,10 @@ function Algorithm(props) {
     let arrayToSort = props.array;
 
     useEffect(() => {
-        bubbleSort(arrayToSort);
+        switch (props.type) {
+            case 'bubble':
+                bubbleSort(arrayToSort);
+        }
     }, []);
 
     /**
@@ -82,8 +85,10 @@ function Algorithm(props) {
 
     return (
         <>
-            <p>{props.title}</p>
-            {display}
+            <h3>{props.title}</h3>
+            <div className='array-container'>
+                {display}
+            </div>
             <button onClick={() => bubbleSort(arrayToSort)}>Sort</button>
             <button onClick={() => props.reset()}>Reset</button>
         </>
