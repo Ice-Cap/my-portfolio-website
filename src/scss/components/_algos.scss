@@ -24,4 +24,18 @@
         color: #000;
         text-decoration: underline;
     }
+
+    button {
+        color: #fff;
+        margin-left: 10px;
+        background-color: $primary-color-200;
+        border: none;
+        padding: 4px 14px;
+        border-radius: 4px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary-color-100;
+        }
+    }
 }
