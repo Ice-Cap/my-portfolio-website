@@ -12,7 +12,7 @@ function Contact() {
             <h2>Contact</h2>
           </div>
 
-          <form name="contact" method="POST" autocomplete="off" >
+          <form name="contact" method="POST" autoComplete="off" >
             <input type="hidden" name="form-name" value="contact" />
 
             <div className="form-input-container">
@@ -27,7 +27,7 @@ function Contact() {
 
             <div className="form-input-container">
               <label htmlFor="message" >Message</label>
-              <textarea name="message" id="message" rows="4" required minlength="20"></textarea>
+              <textarea name="message" id="message" rows="4" required minLength="10"></textarea>
             </div>
 
             <button type="submit">Send</button>

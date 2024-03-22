@@ -1,0 +1,19 @@
+#algos {
+    padding: 2rem 0;
+    background-color: $secondary-color-100;
+    color: $primary-color-100;
+
+    .section-heading {
+        h2 {
+            border: 1px solid $primary-color-200;
+
+            &::after {
+                content: 'Algorithms';
+                position: absolute;
+                border: 1px solid $primary-color-200;
+                color: $primary-color-200;
+                background-color: $secondary-color-100;
+            }
+        }
+    }
+}
