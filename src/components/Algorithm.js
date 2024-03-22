@@ -1,0 +1,89 @@
+import React, { useState, useEffect } from 'react';
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+let display = [];
+let sortedArray = [];
+
+function Algorithm(props) {
+    const [state, setState] = useState({
+        currIndex: null,
+        nextIndex: null,
+        swap: false
+    });
+    const arrayToSort = [5, 3, 8, 6, 2, 7, 1, 4, 10, 9, 11, 5];
+ 
+
+    useEffect(() => {
+        bubbleSort(arrayToSort);
+    }, []);
+
+    /**
+     * Bubble sort sorts an array by 
+     * comparing each element with the next
+     * and swapping them if the condition is met. 
+     * This eventually places the largest element at
+     * the end of the array. The process is repeated 
+     * until the array is deemed sorted by going through an
+     * iteration without a swap.
+     * 
+     * Time complexity is O(n^2)
+     * 
+     * Can be used when memory is limited.
+     * 
+     * @param {array} arr 
+     */
+    async function bubbleSort(arr) {
+        let sorted = false;
+        let loop = 0;
+        while (!sorted) {
+            sorted = true;
+            loop++;
+
+            for (var i = 0; i < arr.length; i++) {
+                let current = arr[i];
+                let next = arr[i + 1];
+                setState((prev) => ({...prev, currIndex: i}));
+                setState((prev) => ({...prev, nextIndex: i + 1}));
+
+                /**
+                 * Swap current with next
+                 * if current is larger.
+                 */
+                if (current > next) {
+                    arr[i] = next;
+                    arr[i + 1] = current;
+                    sorted = false;
+                    setState((prev) => ({...prev, swap: true}));
+                }
+
+                sortedArray = arr;
+
+                await delay(50);
+            }
+        }
+    }
+
+    display = sortedArray.map((item, index) => {
+        const isCurrent = index === state.currIndex;
+        const isNext = index === state.nextIndex;
+        let classes = (isCurrent || isNext) ? 'check-swap' : '';
+
+        return <span className={classes}>{item}, &nbsp;</span>;
+    });
+
+    console.log(sortedArray);
+
+    return (
+        <>
+            <p>Array to sort</p>
+            {arrayToSort.join(', ')}
+            <br/>
+            <br />
+            <p>{props.title}</p>
+            {display}
+        </>
+    );
+}
+
+export default Algorithm;
