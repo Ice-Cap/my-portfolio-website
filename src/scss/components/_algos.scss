@@ -28,16 +28,61 @@
     }
 
     .item {
-        border: 1px solid $primary-color-100;
-        color: $primary-color-100;
-        padding: 5px 10px;
-        font-size: 18px;
+        // border: 1px solid $primary-color-100;
+        // color: $primary-color-100;
+        // padding: 5px 10px;
+        // font-size: 18px;
+        display: inline-block;
+        margin: 0 2px;
+        background-color: $primary-color-100;
+        width: 10px;
+        height: 5px;
+    }
+
+    .i1 {
+        height: 10px;
+    }
+
+    .i2 {
+        height: 15px;
+    }
+
+    .i3 {
+        height: 20px;
+    }
+
+    .i4 {
+        height: 25px;
+    }
+
+    .i5 {
+        height: 30px;
+    }
+
+    .i6 {
+        height: 35px;
+    }
+
+    .i7 {
+        height: 40px;
+    }
+
+    .i8 {
+        height: 45px;
+    }
+
+    .i9 {
+        height: 50px;
+    }
+
+    .i10 {
+        height: 55px;
     }
 
     .check-swap {
         font-weight: bold;
         color: #fff;
-        background-color: $primary-color-100;
+        background-color: rgb(196, 188, 38);
         text-decoration: underline;
     }
 

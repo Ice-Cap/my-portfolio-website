@@ -12,7 +12,6 @@ function Algorithm(props) {
         swap: false,
         isSorted: false
     });
-    console.log(props.array);
     let arrayToSort = props.array;
 
     useEffect(() => {
@@ -65,7 +64,7 @@ function Algorithm(props) {
 
                 sortedArray = arr;
 
-                await delay(80);
+                await delay(100);
             }
         }
 
@@ -75,12 +74,13 @@ function Algorithm(props) {
     display = arrayToSort.map((item, index) => {
         const isCurrent = index === state.currIndex;
         const isNext = index === state.nextIndex;
-        let classes = 'item ';
+        let classes = 'item ' + 'i' + item + ' ';
         if ((isCurrent || isNext) && !state.isSorted) {
             classes += 'check-swap';
         }
 
-        return <span className={classes} key={item + '-' + index}>{item}</span>;
+        // return <span className={classes} key={item + '-' + index}>{item}</span>;
+        return <span className={classes} key={item + '-' + index}></span>;
     });
 
     return (
