@@ -1,8 +1,7 @@
 import React from 'react';
 import useAlgorithmState from '../../hooks/useAlgorithmState';
 import Algorithm from './Algorithm';
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+import { delay } from '../../utils/utils';
 
 function BubbleSort(props) {
     let [state, setState, display, reset] = useAlgorithmState();

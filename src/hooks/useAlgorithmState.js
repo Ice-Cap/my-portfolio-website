@@ -9,7 +9,7 @@ function useAlgorithmState(props) {
         array: [5, 3, 8, 6, 2, 7, 1, 4, 10, 9]
     });
 
-    let display = state.array.map((item, index) => {
+    const display = state.array.map((item, index) => {
         const isCurrent = index === state.currIndex;
         const isNext = index === state.nextIndex;
         let classes = 'item ' + 'i' + item + ' ';
