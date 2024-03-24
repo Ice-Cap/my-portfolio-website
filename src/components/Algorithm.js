@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useAlgorithmState from '../hooks/useAlgorithmState';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -6,20 +7,9 @@ let display = [];
 let sortedArray = [];
 
 function Algorithm(props) {
-    const [state, setState] = useState({
-        currIndex: null,
-        nextIndex: null,
-        swap: false,
-        isSorted: false
-    });
+    const [state, setState] = useAlgorithmState();
     let arrayToSort = props.array;
-
-    useEffect(() => {
-        switch (props.type) {
-            case 'bubble':
-                bubbleSort(arrayToSort);
-        }
-    }, []);
+    // let arrayToSort = [5, 3, 8, 6, 2, 7, 1, 4, 10, 9];
 
     /**
      * Bubble sort sorts an array by 
@@ -64,7 +54,7 @@ function Algorithm(props) {
 
                 sortedArray = arr;
 
-                await delay(100);
+                await delay(70);
             }
         }
 
@@ -79,19 +69,18 @@ function Algorithm(props) {
             classes += 'check-swap';
         }
 
-        // return <span className={classes} key={item + '-' + index}>{item}</span>;
         return <span className={classes} key={item + '-' + index}></span>;
     });
 
     return (
-        <>
+        <div>
             <h3>{props.title}</h3>
             <div className='array-container'>
                 {display}
             </div>
             <button onClick={() => bubbleSort(arrayToSort)}>Sort</button>
             <button onClick={() => props.reset()}>Reset</button>
-        </>
+        </div>
     );
 }
 
