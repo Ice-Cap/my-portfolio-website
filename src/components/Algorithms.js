@@ -9,8 +9,16 @@ function Algorithms() {
                 <div className="section-heading">
                     <h2>Algorithms</h2>
                 </div>
-                <BubbleSort />
-                <QuickSort />
+                <div className='algorithms-container'>
+                    <div className='row'>
+                        <BubbleSort />
+                        <QuickSort />
+                    </div>
+                    <div className='row'>
+                        <BubbleSort />
+                        <QuickSort />
+                    </div>
+                </div>
             </div>
         </section>
     );

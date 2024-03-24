@@ -2,7 +2,7 @@ import React from 'react';
 
 function Algorithm(props) {
     return (
-        <div>
+        <div className='algo'>
             <h3>{props.title}</h3>
             <div className='array-container'>
                 {props.display}

@@ -66,6 +66,58 @@ body {
   max-width: 1500px;
 }
 
+/* 
+    Flex classes
+*/
+.flex {
+    display: flex;
+}
+.space-between {
+    justify-content: space-between;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.align-end {
+    align-items: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.space-around {
+    justify-content: space-around;
+}
+.justify-around {
+    justify-content: space-around;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.nowrap {
+    flex-wrap: nowrap;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.flex-shrink {
+    flex-shrink: 1;
+}
+.flex-grow-0 {
+    flex-grow: 0;
+}
+
 @media screen and (max-width: 700px) {
   .container {
     width: 95%;

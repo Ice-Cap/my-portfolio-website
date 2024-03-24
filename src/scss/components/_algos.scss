@@ -96,4 +96,14 @@
             background-color: $primary-color-100;
         }
     }
+    .algorithms-container {
+        margin-top: 20px;
+    }
+    .algorithms-container .row {
+        display: flex;
+        margin-bottom: 45px;
+    }
+    .algorithms-container .algo {
+        margin-right: 45px;
+    }
 }
