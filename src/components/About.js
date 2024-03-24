@@ -15,7 +15,7 @@ function About() {
                             For as long as I can remember, I've always loved building things, fixing things, and learning new things. And luckily, programming allows me to do all of those things. I have had the opportunity to work on a variety of projects, from simple websites to complex web applications. I emphasize clean, efficient, maintainable, and secure code in all of my work. And even after I finish a project, I'm always looking for ways to iterate on it to imporove it.
                         </p>
                         <p>
-                            I studied web development at the DATC and graduated in June of 2020. Throughout the program, I learned HTML, CSS, JavaScript, PHP, WordPress, and React. After graduating, I continued to learn deeper concepts of JavaScript and React, SQL, and PHP on my own through personal projects, courses, and documentation.
+                            I studied web development at the DATC and graduated in June of 2020. Throughout the program, I learned HTML, CSS, JavaScript, PHP, WordPress, and React. After graduating, I continued to learn deeper concepts of JavaScript, React, SQL, and PHP on my own through personal projects, courses, and documentation.
                         </p>
                         <p>
                             One of the most important things I've learned is how to learn more effeciently. There have been many times I've had to do something that I had next to no knowledge about, but I've always been able to learn the concept or technology quickly and keep moving forward.
