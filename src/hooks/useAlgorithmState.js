@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-let arrayToSort = [5, 3, 8, 6, 2, 7, 1, 4, 10, 9];
-
 function useAlgorithmState(props) {
     const [state, setState] = useState({
         currIndex: null,
@@ -23,7 +21,7 @@ function useAlgorithmState(props) {
     });
 
     function reset() {
-        setState((prev) => ({...prev, array: arrayToSort}));
+        setState((prev) => ({...prev, array: [5, 3, 8, 6, 2, 7, 1, 4, 10, 9]}));
     }
 
     return [state, setState, display, reset];

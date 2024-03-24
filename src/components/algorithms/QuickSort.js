@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import useAlgorithmState from '../../hooks/useAlgorithmState';
+import Algorithm from './Algorithm';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function QuickSort(props) {
     let [state, setState, display, reset] = useAlgorithmState();
-    let arrayToSort = [5, 3, 8, 6, 2, 7, 1, 4, 10, 9];
+    const arrayToSort = state.array;
 
     async function quickSort(arr, start, end) {
         setState((prev) => ({...prev, isSorted: false}));
@@ -26,7 +27,7 @@ function QuickSort(props) {
         let i = start - 1;
 
         for (let j = start; j < end; j++) {
-            await delay(80);
+            await delay(40);
 
             if (arr[j] < pivot) {
                 i++;
@@ -50,7 +51,7 @@ function QuickSort(props) {
             swap: true
         }));
 
-        await delay(80);
+        await delay(40);
 
         return i + 1;
     }
@@ -62,14 +63,12 @@ function QuickSort(props) {
     };
 
     return (
-        <div>
-            <h3>Quck Sort</h3>
-            <div className='array-container'>
-                {display}
-            </div>
-            <button onClick={() => quickSort(arrayToSort, 0, arrayToSort.length - 1)}>Sort</button>
-            <button onClick={() => reset()}>Reset</button>
-        </div>
+        <Algorithm 
+            title='Quick Sort' 
+            display={display} 
+            sort={() => quickSort(arrayToSort, 0, arrayToSort.length - 1)} 
+            reset={reset}
+        />
     );
 }
 

@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import useAlgorithmState from '../hooks/useAlgorithmState';
+import React from 'react';
+import useAlgorithmState from '../../hooks/useAlgorithmState';
+import Algorithm from './Algorithm';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-let display = [];
-let sortedArray = [];
-
-function Algorithm(props) {
-    const [state, setState] = useAlgorithmState();
-    let arrayToSort = props.array;
-    // let arrayToSort = [5, 3, 8, 6, 2, 7, 1, 4, 10, 9];
+function BubbleSort(props) {
+    let [state, setState, display, reset] = useAlgorithmState();
 
     /**
      * Bubble sort sorts an array by 
@@ -49,10 +45,8 @@ function Algorithm(props) {
                     arr[i] = next;
                     arr[i + 1] = current;
                     sorted = false;
-                    setState((prev) => ({...prev, swap: true}));
+                    setState((prev) => ({...prev, swap: true, array: arr}));
                 }
-
-                sortedArray = arr;
 
                 await delay(70);
             }
@@ -61,27 +55,14 @@ function Algorithm(props) {
         setState((prev) => ({...prev, isSorted: true}));
     }
 
-    display = arrayToSort.map((item, index) => {
-        const isCurrent = index === state.currIndex;
-        const isNext = index === state.nextIndex;
-        let classes = 'item ' + 'i' + item + ' ';
-        if ((isCurrent || isNext) && !state.isSorted) {
-            classes += 'check-swap';
-        }
-
-        return <span className={classes} key={item + '-' + index}></span>;
-    });
-
     return (
-        <div>
-            <h3>{props.title}</h3>
-            <div className='array-container'>
-                {display}
-            </div>
-            <button onClick={() => bubbleSort(arrayToSort)}>Sort</button>
-            <button onClick={() => props.reset()}>Reset</button>
-        </div>
+        <Algorithm 
+            title='Bubble Sort' 
+            display={display} 
+            sort={() => bubbleSort(state.array)} 
+            reset={reset} 
+        />
     );
 }
 
-export default Algorithm;
+export default BubbleSort;
