@@ -7,8 +7,10 @@ function Algorithm(props) {
             <div className='array-container'>
                 {props.display}
             </div>
-            <button onClick={() => props.sort()}>Sort</button>
-            <button onClick={() => props.reset()}>Reset</button>
+            <div className="flex space-between">
+                <button onClick={() => props.sort()}>Sort</button>
+                <button onClick={() => props.reset()}>Reset</button>
+            </div>
         </div>
     );
 }
