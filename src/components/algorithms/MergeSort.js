@@ -11,7 +11,7 @@ function MergeSort(props) {
      * that divides an array into two halves, sorts them
      * and then merges them back together.
      * 
-     * Time complexity is O(n log n)
+     * Time complexity is O(nlog(n))
      * 
      * @param {array} arr 
      * @returns {array}
@@ -61,7 +61,7 @@ function MergeSort(props) {
 
         while (left.length > 0 && right.length > 0) {
             await delay(40);
-            let newItem = null;
+            let nextItem = null;
 
             setState((prev) => {
                 const leftIndex = prev.array.indexOf(left[0]);
@@ -70,12 +70,12 @@ function MergeSort(props) {
             });
 
             if (left[0] < right[0]) {
-                newItem = left.shift();
+                nextItem = left.shift();
             } else {
-                newItem = right.shift();
+                nextItem = right.shift();
             }
 
-            result.push(newItem);
+            result.push(nextItem);
         }
 
         return result.concat(left.length ? left : right);

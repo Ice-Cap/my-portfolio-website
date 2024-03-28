@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React from 'react';
 import useAlgorithmState from '../../hooks/useAlgorithmState';
 import Algorithm from './Algorithm';
 import { delay } from '../../utils/utils';
@@ -7,13 +7,32 @@ function QuickSort(props) {
     let [state, setState, display, reset] = useAlgorithmState();
     const arrayToSort = state.array;
 
+    /**
+     * Quick sort is a divide and conquer algorithm
+     * that picks an element as the pivot and partitions
+     * the given array around the picked pivot.
+     * 
+     * The pivot element is selected such that elements
+     * smaller than the pivot are moved to the left of the pivot
+     * and elements larger than the pivot are moved to the right.
+     * 
+     * The algorithms is called recursively until the array is sorted.
+     * 
+     * Average Time complexity is O(nlog(n))
+     * with a worst case of O(n^2)
+     * 
+     * @param {array} arr
+     * @param {number} start
+     * @param {number} end
+     * @returns {array}
+     */
     async function quickSort(arr, start, end) {
         setState((prev) => ({...prev, isSorted: false}));
         if (start >= end) {
             return;
         }
 
-        let pivot = await partition(arr, start, end);
+        const pivot = await partition(arr, start, end);
 
         await quickSort(arr, start, pivot - 1);
         await quickSort(arr, pivot + 1, end);
@@ -21,8 +40,18 @@ function QuickSort(props) {
         setState((prev) => ({...prev, isSorted: true}));
     }
 
+    /**
+     * Partitions the array by selecting the last element
+     * as the pivot and places it in the correct position
+     * in the array.
+     * 
+     * @param {array} arr
+     * @param {number} start
+     * @param {number} end
+     * @returns {number}
+     */
     async function partition(arr, start, end) {
-        let pivot = arr[end];
+        const pivot = arr[end];
         let i = start - 1;
 
         for (let j = start; j < end; j++) {
@@ -55,8 +84,15 @@ function QuickSort(props) {
         return i + 1;
     }
 
+    /**
+     * Swaps two elements in an array.
+     * 
+     * @param {array} arr
+     * @param {number} firstIndex
+     * @param {number} secondIndex
+     */
     const swap = (arr, firstIndex, secondIndex) => {
-        let temp = arr[firstIndex];
+        const temp = arr[firstIndex];
         arr[firstIndex] = arr[secondIndex];
         arr[secondIndex] = temp;
     };
