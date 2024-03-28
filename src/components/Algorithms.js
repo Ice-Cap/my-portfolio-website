@@ -1,6 +1,7 @@
 import React from 'react';
 import BubbleSort from './algorithms/BubbleSort';
 import QuickSort from './algorithms/QuickSort';
+import MergeSort from './algorithms/MergeSort';
 
 function Algorithms() {
     return (
@@ -13,6 +14,7 @@ function Algorithms() {
                     <div className='row'>
                         <BubbleSort />
                         <QuickSort />
+                        <MergeSort />
                     </div>
                     <div className='row'>
                         <BubbleSort />
