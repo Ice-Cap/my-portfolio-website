@@ -8,11 +8,11 @@ import Contact from './components/Contact';
 function App() {
     return (
         <main>
-            {/* <Introduction /> */}
-            {/* <PersonalProjects /> */}
+            <Introduction />
+            <PersonalProjects />
             <Algorithms />
-            {/* <ProfessionalProjects /> */}
-            {/* <About /> */}
+            <ProfessionalProjects />
+            <About />
             <Contact />
         </main>
     );

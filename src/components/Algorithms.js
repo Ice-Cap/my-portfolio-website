@@ -17,8 +17,6 @@ function Algorithms() {
                         <MergeSort />
                     </div>
                     <div className='row'>
-                        <BubbleSort />
-                        <QuickSort />
                     </div>
                 </div>
             </div>
