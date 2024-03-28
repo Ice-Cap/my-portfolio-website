@@ -28,12 +28,25 @@
         width: fit-content;
     }
 
+    .search-container {
+        display: flex;
+        max-width: 170px;
+        flex-wrap: wrap;
+    }
+
+    .search-buttons-container {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
     .search-item {
-        display: inline-block;
-        margin: 0 2px;
+        // display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2px;
         background-color: $primary-color-100;
-        // width: 14px;
-        // height: 14px;
+        width: 30px;
         padding: 5px;
         color: #fff;
 

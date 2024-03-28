@@ -3,10 +3,10 @@ import { delay } from '../../utils/utils';
 
 function BinarySearch(props) {
     const [state, setState] = useState({
-        currIndex: 0,
+        currIndex: null,
         nextIndex: null,
-        needle: 7,
-        array: [5, 3, 8, 6, 2, 7, 1, 4, 10, 9]
+        needle: 4,
+        array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
     });
 
     async function search() {
@@ -15,7 +15,7 @@ function BinarySearch(props) {
         let mid = Math.floor((high + low) / 2);
 
         while (low <= high) {
-            await delay(150);
+            await delay(200);
             setState((prev) => {
                 return {...prev, currIndex: mid};
             });
@@ -31,6 +31,14 @@ function BinarySearch(props) {
         }
 
         return -1;
+    }
+
+    function reset() {
+        setState((prev) => ({
+            ...prev,
+            currIndex: null,
+            nextIndex: null
+        }));
     }
 
     const display = state.array.map((item, index) => {
@@ -52,9 +60,9 @@ function BinarySearch(props) {
             <div className='search-container'>
                 {display}
             </div>
-            <div className="flex space-between">
+            <div className="flex space-between search-buttons-container">
                 <button onClick={() => search()}>Search</button>
-                <button onClick={() => props.reset()}>Reset</button>
+                <button onClick={() => reset()}>Reset</button>
             </div>
         </div>
     );
