@@ -1,10 +1,10 @@
 import React from 'react';
-import useAlgorithmState from '../../hooks/useAlgorithmState';
-import Algorithm from './Algorithm';
+import useSortAlgorithm from '../../hooks/useSortAlgorithm';
+import SortAlgorithm from './SortAlgorithm';
 import { delay } from '../../utils/utils';
 
 function BubbleSort(props) {
-    let [state, setState, display, reset] = useAlgorithmState();
+    let [state, setState, display, reset] = useSortAlgorithm();
 
     /**
      * Bubble sort sorts an array by 
@@ -55,7 +55,7 @@ function BubbleSort(props) {
     }
 
     return (
-        <Algorithm 
+        <SortAlgorithm 
             title='Bubble Sort' 
             display={display} 
             sort={() => bubbleSort(state.array)} 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function useAlgorithmState(props) {
+function useSortAlgorithm(props) {
     const [state, setState] = useState({
         currIndex: null,
         nextIndex: null,
@@ -27,4 +27,4 @@ function useAlgorithmState(props) {
     return [state, setState, display, reset];
 }
 
-export default useAlgorithmState;
+export default useSortAlgorithm;

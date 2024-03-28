@@ -1,10 +1,10 @@
 import React from 'react';
-import useAlgorithmState from '../../hooks/useAlgorithmState';
-import Algorithm from './Algorithm';
+import useSortAlgorithm from '../../hooks/useSortAlgorithm';
+import SortAlgorithm from './SortAlgorithm';
 import { delay } from '../../utils/utils';
 
 function MergeSort(props) {
-    let [state, setState, display, reset] = useAlgorithmState();
+    let [state, setState, display, reset] = useSortAlgorithm();
 
     /**
      * Merge sort is a divide and conquer algorithm
@@ -82,7 +82,7 @@ function MergeSort(props) {
     }
 
     return (
-        <Algorithm 
+        <SortAlgorithm 
             title='Merge Sort' 
             display={display} 
             sort={async () => {

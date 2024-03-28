@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Algorithm(props) {
+function SortAlgorithm(props) {
     return (
         <div className='algo'>
             <h3>{props.title}</h3>
@@ -15,4 +15,4 @@ function Algorithm(props) {
     );
 }
 
-export default Algorithm;
+export default SortAlgorithm;

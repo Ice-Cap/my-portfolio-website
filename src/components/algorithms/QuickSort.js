@@ -1,10 +1,10 @@
 import React from 'react';
-import useAlgorithmState from '../../hooks/useAlgorithmState';
-import Algorithm from './Algorithm';
+import useSortAlgorithm from '../../hooks/useSortAlgorithm';
+import SortAlgorithm from './SortAlgorithm';
 import { delay } from '../../utils/utils';
 
 function QuickSort(props) {
-    let [state, setState, display, reset] = useAlgorithmState();
+    let [state, setState, display, reset] = useSortAlgorithm();
     const arrayToSort = state.array;
 
     /**
@@ -98,7 +98,7 @@ function QuickSort(props) {
     };
 
     return (
-        <Algorithm 
+        <SortAlgorithm 
             title='Quick Sort' 
             display={display} 
             sort={() => quickSort(arrayToSort, 0, arrayToSort.length - 1)} 
