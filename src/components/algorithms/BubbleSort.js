@@ -47,7 +47,7 @@ function BubbleSort(props) {
                     setState((prev) => ({...prev, swap: true, array: arr}));
                 }
 
-                await delay(70);
+                await delay(40);
             }
         }
 
