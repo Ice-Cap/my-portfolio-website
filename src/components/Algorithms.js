@@ -18,7 +18,7 @@ function Algorithms() {
                         <MergeSort />
                     </div>
                     <div className='row'>
-                        {/* <BinarySearch /> */}
+                        <BinarySearch />
                     </div>
                 </div>
             </div>

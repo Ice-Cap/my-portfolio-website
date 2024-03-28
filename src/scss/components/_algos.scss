@@ -28,6 +28,26 @@
         width: fit-content;
     }
 
+    .search-item {
+        display: inline-block;
+        margin: 0 2px;
+        background-color: $primary-color-100;
+        // width: 14px;
+        // height: 14px;
+        padding: 5px;
+        color: #fff;
+
+        &.current {
+            background-color: gray;
+        }
+        &.needle {
+            background-color: rgb(184, 177, 40);
+        }
+        &.needle.found {
+            background-color: green;
+        }
+    }
+
     .item {
         display: inline-block;
         margin: 0 2px;
@@ -80,7 +100,6 @@
         font-weight: bold;
         color: #fff;
         background-color: rgb(196, 188, 38);
-        text-decoration: underline;
     }
 
     button {
