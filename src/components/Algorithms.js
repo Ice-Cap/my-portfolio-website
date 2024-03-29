@@ -19,6 +19,8 @@ function Algorithms() {
                     </div>
                     <div className='row'>
                         <BinarySearch />
+                        <BinarySearch />
+                        <BinarySearch />
                     </div>
                 </div>
             </div>
