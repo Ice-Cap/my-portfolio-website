@@ -4,6 +4,7 @@ import QuickSort from './algorithms/QuickSort';
 import MergeSort from './algorithms/MergeSort';
 import BinarySearch from './algorithms/BinarySearch';
 import LinearSearch from './algorithms/LinearSearch';
+import DepthFirstSearch from './algorithms/DepthFirstSearch';
 
 function Algorithms() {
     return (
@@ -21,7 +22,7 @@ function Algorithms() {
                     <div className='row'>
                         <LinearSearch />
                         <BinarySearch />
-                        <BinarySearch />
+                        <DepthFirstSearch />
                     </div>
                 </div>
             </div>

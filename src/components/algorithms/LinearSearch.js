@@ -16,7 +16,7 @@ function LinearSearch(props) {
      */
     async function search() {
         for (let i = 0; i < state.array.length; i++) {
-            await delay(250);
+            await delay(150);
 
             setState((prev) => {
                 return {...prev, currIndex: i};
