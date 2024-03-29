@@ -30,8 +30,9 @@
 
     .search-container {
         display: flex;
-        max-width: 170px;
+        width: 185px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .search-buttons-container {
@@ -40,7 +41,6 @@
     }
 
     .search-item {
-        // display: inline-block;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,6 +49,11 @@
         width: 30px;
         padding: 5px;
         color: #fff;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($primary-color-100, 10%);
+        }
 
         &.current {
             background-color: gray;

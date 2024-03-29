@@ -4,9 +4,8 @@ import { delay } from '../../utils/utils';
 function BinarySearch(props) {
     const [state, setState] = useState({
         currIndex: null,
-        nextIndex: null,
         needle: 4,
-        array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+        array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     });
 
     async function search() {
@@ -15,7 +14,7 @@ function BinarySearch(props) {
         let mid = Math.floor((high + low) / 2);
 
         while (low <= high) {
-            await delay(200);
+            await delay(250);
             setState((prev) => {
                 return {...prev, currIndex: mid};
             });
@@ -36,23 +35,28 @@ function BinarySearch(props) {
     function reset() {
         setState((prev) => ({
             ...prev,
-            currIndex: null,
-            nextIndex: null
+            currIndex: null
         }));
     }
 
     const display = state.array.map((item, index) => {
         const isCurrent = index === state.currIndex;
-        const isNext = index === state.nextIndex;
         const isNeedle = item === state.needle;
-        const isFound = state.array[state.currIndex] === state.needle;
+        const isFound = (state.array[state.currIndex] === state.needle) && (state.currIndex === index);
 
         let classes = 'search-item ';
         if (isCurrent) classes += 'current ';
-        if (isNext) classes += 'next ';
         if (isNeedle) classes += 'needle ';
         if (isFound) classes += 'found ';
-        return <span className={classes} key={item + '-' + index}>{item}</span>;
+        return (
+            <span 
+                className={classes} 
+                key={item + '-' + index}
+                onClick={() => setState((prev) => ({...prev, needle: item}))}
+            >
+                {item}
+            </span>
+        );
     });
     return (
         <div className='algo search'>
