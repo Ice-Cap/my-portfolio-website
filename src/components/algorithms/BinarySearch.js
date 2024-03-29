@@ -4,7 +4,7 @@ import SearchAlgorithm from './SearchAlgorithm';
 import { delay } from '../../utils/utils';
 
 function BinarySearch(props) {
-    const [state, setState, display, reset] = useSearchAlgorithm(5, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+    const [state, setState, display, reset] = useSearchAlgorithm(14, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
 
     /**
      * Binary search is used to find the position of a target value within a sorted array. 

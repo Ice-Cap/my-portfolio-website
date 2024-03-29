@@ -3,6 +3,7 @@ import BubbleSort from './algorithms/BubbleSort';
 import QuickSort from './algorithms/QuickSort';
 import MergeSort from './algorithms/MergeSort';
 import BinarySearch from './algorithms/BinarySearch';
+import LinearSearch from './algorithms/LinearSearch';
 
 function Algorithms() {
     return (
@@ -18,7 +19,7 @@ function Algorithms() {
                         <MergeSort />
                     </div>
                     <div className='row'>
-                        <BinarySearch />
+                        <LinearSearch />
                         <BinarySearch />
                         <BinarySearch />
                     </div>
