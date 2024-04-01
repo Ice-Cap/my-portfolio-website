@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import * as d3 from 'd3';
 
 const nodes = [
     { id: 'A' }, { id: 'B' }, { id: 'C' }, { id: 'D' }, { id: 'E' }, { id: 'F' }
