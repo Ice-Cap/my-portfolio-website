@@ -16,10 +16,10 @@ class GraphMaker {
 
         for (let node in this.graph) {
             const nodeObj = this.graph[node];
-            
+
             for (let neighbor of nodeObj.neighbors) {
                 const neighborObj = this.graph[neighbor];
-                this.createLine(nodeObj.x, nodeObj.y, neighborObj.x, neighborObj.y);
+                this.createLine(nodeObj.x + 12.5, nodeObj.y + 12.5, neighborObj.x + 12.5, neighborObj.y + 12.5);
             }
         }
     }

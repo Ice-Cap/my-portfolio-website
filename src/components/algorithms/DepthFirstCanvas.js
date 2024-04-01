@@ -7,7 +7,7 @@ function DepthFirstSearch(props) {
         currIndex: null,
         needle: 14,
         visited: new Set(),
-        nodeGrabed: null,
+        nodeGrabbed: null,
         graph: {
             'A': {
                 x: 0,
@@ -49,7 +49,7 @@ function DepthFirstSearch(props) {
 
         // Clear the canvas for each render
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         ctx.fillStyle = 'green';
 
         const Graph = new GraphMaker(ctx, state.graph);
@@ -83,7 +83,7 @@ function DepthFirstSearch(props) {
             const nodeObj = state.graph[node];
             if (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25) {
                 setState((prev) => {
-                    return { ...prev, nodeGrabed: node };
+                    return { ...prev, nodeGrabbed: node };
                 });
                 console.log(node);
                 break;
@@ -92,7 +92,7 @@ function DepthFirstSearch(props) {
     }
 
     function handleDrag(e) {
-        if (!state.nodeGrabed || !canvasRef.current) {
+        if (!state.nodeGrabbed || !canvasRef.current) {
             return;
         }
 
@@ -104,8 +104,8 @@ function DepthFirstSearch(props) {
                 ...prev,
                 graph: {
                     ...prev.graph,
-                    [prev.nodeGrabed]: {
-                        ...prev.graph[prev.nodeGrabed],
+                    [prev.nodeGrabbed]: {
+                        ...prev.graph[prev.nodeGrabbed],
                         x: x,
                         y: y
                     }
@@ -119,7 +119,7 @@ function DepthFirstSearch(props) {
             <h3>Depth-First Search</h3>
             <canvas 
                 onMouseDown={handleClick} 
-                onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabed: null }))}
+                onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
                 onMouseMove={handleDrag}
                 ref={canvasRef} 
                 width="200" 
