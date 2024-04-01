@@ -1,10 +1,10 @@
 
 class GraphMaker {
-    constructor(ctx, graph) {
+    constructor(ctx, graph, color = 'black') {
         this.graph = graph;
         this.ctx = ctx;
-
-        this.ctx.fillStyle = 'green';
+        this.defaultColor = color;
+        this.ctx.fillStyle = color;
         this.createGraph();
     }
 
@@ -17,10 +17,15 @@ class GraphMaker {
                 this.createLine(nodeObj.x + 12.5, nodeObj.y + 12.5, neighborObj.x + 12.5, neighborObj.y + 12.5);
             }
         }
-        
+
         for (let node in this.graph) {
             const nodeObj = this.graph[node];
-            this.createSquare(nodeObj.x, nodeObj.y);
+
+            if (nodeObj.color) {
+                this.createSquare(nodeObj.x, nodeObj.y, nodeObj.color);
+            } else {
+                this.createSquare(nodeObj.x, nodeObj.y);
+            }
         }
 
     }
@@ -32,8 +37,10 @@ class GraphMaker {
         this.ctx.stroke();
     }
 
-    createSquare(x, y, size = 25) {
+    createSquare(x, y, color = null, size = 25) {
+        this.ctx.fillStyle = color ?? this.defaultColor;
         this.ctx.fillRect(x, y, size, size);
+        this.ctx.fillStyle = this.defaultColor;
     }
 }
 

@@ -12,6 +12,7 @@ function DepthFirstSearch(props) {
             'A': {
                 x: 0,
                 y: 0,
+                color: '#b8b128',
                 neighbors: ['B', 'C']
             },
             'B': {
@@ -50,9 +51,7 @@ function DepthFirstSearch(props) {
         // Clear the canvas for each render
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = 'green';
-
-        const Graph = new GraphMaker(ctx, state.graph);
+        const Graph = new GraphMaker(ctx, state.graph, '#3A0A86');
     });
 
     function dfs(graph, start, visited = new Set()) {
