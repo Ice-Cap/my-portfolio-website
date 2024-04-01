@@ -17,20 +17,42 @@ function DepthFirstSearch(props) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
-        // Clear the canvas for each render
+        /**
+         * Clear the canvas for each render.
+         */
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        /**
+         * Update the start node to be yellow.
+         */
         state.graph[state.start].color = '#b8b128';
 
+        /**
+         * Create graph on canvas.
+         */
         new GraphMaker(ctx, state.graph, '#3A0A86');
     });
 
+    /**
+     * Depth-first search is an algorithm for traversing 
+     * or searching tree or graph data structures.
+     * The algorithm starts at the root node and explores 
+     * as far as possible along each branch before backtracking.
+     * 
+     * Time Complexity: O(V + E)
+     * 
+     * @param {object} graph 
+     * @param {string} start 
+     * @param {object} visited 
+     */
     async function dfs(graph, start, visited = new Set()) {
-        console.log(start); // Process the current node as needed
         visited.add(start); // Mark the current node as visited
 
         await delay(150);
 
+        /**
+         * Update each visited node to be yellow.
+         */
         setState((prev) => {
             return { 
                 ...prev, 
@@ -46,24 +68,34 @@ function DepthFirstSearch(props) {
             };
         });
 
-        // Iterate through all the neighbors of the current node
+        /**
+         * Iterate through all the neighbors of the current node
+         */
         graph[start].neighbors.forEach(async (neighbor) => {
             await delay(150);
-            if (!visited.has(neighbor)) { // If the neighbor hasn't been visited
-                dfs(graph, neighbor, visited); // Recursively visit the neighbor
+            if (!visited.has(neighbor)) {
+                dfs(graph, neighbor, visited);
             }
         });
     }
 
+    /**
+     * This will handle grabbing a node on the canvas.
+     * 
+     * @param {object} e 
+     */
     function handleGrab(e) {
-        // get bounding rectangle of canvas
         const rect = canvasRef.current.getBoundingClientRect();
 
-        // get x and y coordinates of click relative to canvas
+        /**
+         * get x and y coordinates of click relative to canvas
+         */
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;   
         
-        // check if click is within a node
+        /**
+         * Check if click is within a node
+         */
         for (let node in state.graph) {
             const nodeObj = state.graph[node];
             if (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25) {
@@ -75,6 +107,12 @@ function DepthFirstSearch(props) {
         }
     }
 
+    /**
+     * This will handle dragging a node on the canvas.
+     * Dragging a node will update it's x and y coordinates.
+     * 
+     * @param {object} e
+     */
     function handleDrag(e) {
         if (!state.nodeGrabbed || !canvasRef.current) {
             return;
@@ -98,18 +136,31 @@ function DepthFirstSearch(props) {
         });
     }
 
-    function handleClick(e) {
-        // get bounding rectangle of canvas
+    /**
+     * This will change the start node of the graph
+     * to be the node that was clicked.
+     * 
+     * @param {object} e 
+     */
+    function changeStartNode(e) {
         const rect = canvasRef.current.getBoundingClientRect();
 
-        // get x and y coordinates of click relative to canvas
+        /**
+         * get x and y coordinates of click relative to canvas
+         */
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;   
         
-        // check if click is within a node
+        /**
+         * Check if click is within a node
+         */
         for (let node in state.graph) {
             const nodeObj = state.graph[node];
             if (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25) {
+                /**
+                 * Update the start node to be the clicked node
+                 * and update start colors accordingly.
+                 */
                 setState((prev) => {
                     return { 
                         ...prev, 
@@ -132,6 +183,9 @@ function DepthFirstSearch(props) {
         }
     }
 
+    /**
+     * This will reset the graph to it's original state.
+     */
     function reset() {
         setState((prev) => {
             return {
@@ -151,7 +205,7 @@ function DepthFirstSearch(props) {
                     onMouseDown={handleGrab} 
                     onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
                     onMouseMove={handleDrag}
-                    onClick={handleClick}
+                    onClick={changeStartNode}
                     ref={canvasRef} 
                     width="185" 
                     height="130" 
