@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import GraphMaker from '../../utils/GraphMaker';
-
+import { delay } from '../../utils/utils';
 
 function DepthFirstSearch(props) {
     const [state, setState] = useState({
@@ -17,17 +17,17 @@ function DepthFirstSearch(props) {
             },
             'B': {
                 x: 50,
-                y: 15,
+                y: 0,
                 neighbors: ['D', 'E']
             },
             'C': {
                 x: 0,
                 y: 50,
-                neighbors: ['F']
+                neighbors: ['B']
             },
             'D': {
-                x: 65,
-                y: 70,
+                x: 50,
+                y: 50,
                 neighbors: []
             },
             'E': {
@@ -36,8 +36,8 @@ function DepthFirstSearch(props) {
                 neighbors: ['F']
             },
             'F': {
-                x: 70,
-                y: 120,
+                x: 100,
+                y: 50,
                 neighbors: []
             }
         }
@@ -54,15 +54,30 @@ function DepthFirstSearch(props) {
         const Graph = new GraphMaker(ctx, state.graph, '#3A0A86');
     });
 
-    function dfs(graph, start, visited = new Set()) {
+    async function dfs(graph, start, visited = new Set()) {
         console.log(start); // Process the current node as needed
         visited.add(start); // Mark the current node as visited
+
+        await delay(150);
+
         setState((prev) => {
-            return { ...prev, currIndex: start, visited: visited };
+            return { 
+                ...prev, 
+                currIndex: start, 
+                visited: visited,
+                graph: {
+                    ...prev.graph,
+                    [start]: {
+                        ...prev.graph[start],
+                        color: '#b8b128'
+                    }
+                }
+            };
         });
 
         // Iterate through all the neighbors of the current node
-        graph[start].forEach(neighbor => {
+        graph[start].neighbors.forEach(async (neighbor) => {
+            await delay(150);
             if (!visited.has(neighbor)) { // If the neighbor hasn't been visited
                 dfs(graph, neighbor, visited); // Recursively visit the neighbor
             }
@@ -115,15 +130,17 @@ function DepthFirstSearch(props) {
 
     return (
         <div className='algo search'>
-            <h3>Depth-First Search</h3>
-            <canvas 
-                onMouseDown={handleClick} 
-                onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
-                onMouseMove={handleDrag}
-                ref={canvasRef} 
-                width="200" 
-                height="200" 
-            />
+            <h3>DFS</h3>
+            <div className='flex align-center justify-center'>
+                <canvas 
+                    onMouseDown={handleClick} 
+                    onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
+                    onMouseMove={handleDrag}
+                    ref={canvasRef} 
+                    width="185" 
+                    height="130" 
+                />
+            </div>
             <div className="flex space-between search-buttons-container">
                 <button onClick={() => dfs(state.graph, 'A')}>Search</button>
                 <button onClick={() => { }}>Reset</button>
