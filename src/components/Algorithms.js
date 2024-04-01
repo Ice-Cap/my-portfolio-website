@@ -4,7 +4,7 @@ import QuickSort from './algorithms/QuickSort';
 import MergeSort from './algorithms/MergeSort';
 import BinarySearch from './algorithms/BinarySearch';
 import LinearSearch from './algorithms/LinearSearch';
-import DepthFirstSearch from './algorithms/DepthFirstSearch';
+import DepthFirstSearch from './algorithms/DepthFirstCanvas';
 
 function Algorithms() {
     return (
