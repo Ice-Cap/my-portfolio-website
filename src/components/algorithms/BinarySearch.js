@@ -1,29 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useSearchAlgorithm from '../../hooks/useSearchAlgorithm';
+import SearchAlgorithm from './SearchAlgorithm';
+import { delay } from '../../utils/utils';
 
 function BinarySearch(props) {
-    const [state, setState] = useState({
-        currIndex: null,
-        nextIndex: null,
-        array: [5, 3, 8, 6, 2, 7, 1, 4, 10, 9]
-    });
+    const [state, setState, display, reset] = useSearchAlgorithm(14, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
 
-    const display = state.array.map((item, index) => {
-        const isCurrent = index === state.currIndex;
-        const isNext = index === state.nextIndex;
-        let classes = 'item ' + 'i' + item + ' ';
-        return <span className={classes} key={item + '-' + index}></span>;
-    });
+    /**
+     * Binary search is used to find the position of a target value within a sorted array. 
+     * It works by repeatedly dividing in half the portion of the list 
+     * that could contain the target value, reducing the search area by half each time, 
+     * until the target value is found or the search space is empty.
+     * 
+     * Time Complexity: O(log n)
+     * 
+     * @returns {number}
+     */
+    async function search() {
+        let low = 0;
+        let high = state.array.length - 1;
+        let mid = Math.floor((high + low) / 2);
+
+        while (low <= high) {
+            await delay(250);
+            const cursor = state.array[mid];
+
+            setState((prev) => {
+                return {...prev, currIndex: mid};
+            });
+
+            if (cursor === state.needle) {
+                return mid;
+            } else if (cursor < state.needle) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+
+            mid = Math.floor((high + low) / 2);
+        }
+
+        return -1;
+    }
+
     return (
-        <div className='algo'>
-            <h3>Binary Search</h3>
-            <div className='array-container'>
-                {display}
-            </div>
-            <div className="flex space-between">
-                <button onClick={() => props.search()}>Search</button>
-                <button onClick={() => props.reset()}>Reset</button>
-            </div>
-        </div>
+        <SearchAlgorithm 
+            title='Binary Search'
+            display={display}
+            search={search}
+            reset={reset}
+        />
     );
 }
 

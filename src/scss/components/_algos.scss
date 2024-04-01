@@ -28,6 +28,44 @@
         width: fit-content;
     }
 
+    .search-container {
+        display: flex;
+        width: 185px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-buttons-container {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .search-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2px;
+        background-color: $primary-color-100;
+        width: 30px;
+        padding: 5px;
+        color: #fff;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($primary-color-100, 10%);
+        }
+
+        &.current {
+            background-color: gray;
+        }
+        &.needle {
+            background-color: rgb(184, 177, 40);
+        }
+        &.needle.found {
+            background-color: green;
+        }
+    }
+
     .item {
         display: inline-block;
         margin: 0 2px;
@@ -80,7 +118,6 @@
         font-weight: bold;
         color: #fff;
         background-color: rgb(196, 188, 38);
-        text-decoration: underline;
     }
 
     button {
