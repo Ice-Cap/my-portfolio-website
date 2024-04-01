@@ -2,47 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import GraphMaker from '../../utils/GraphMaker';
 import { delay } from '../../utils/utils';
 
-const graph = {
-    'A': {
-        x: 0,
-        y: 0,
-        color: '#b8b128',
-        neighbors: ['B', 'C']
-    },
-    'B': {
-        x: 50,
-        y: 0,
-        neighbors: ['D', 'E']
-    },
-    'C': {
-        x: 0,
-        y: 50,
-        neighbors: ['B']
-    },
-    'D': {
-        x: 50,
-        y: 50,
-        neighbors: []
-    },
-    'E': {
-        x: 100,
-        y: 0,
-        neighbors: ['F']
-    },
-    'F': {
-        x: 100,
-        y: 50,
-        neighbors: []
-    }
-};
-
 function DepthFirstSearch(props) {
     const [state, setState] = useState({
         currIndex: null,
         needle: 14,
         visited: new Set(),
         nodeGrabbed: null,
-        graph: graph
+        graph: graph,
+        start: 'H'
     });
     const canvasRef = useRef();
 
@@ -53,7 +20,9 @@ function DepthFirstSearch(props) {
         // Clear the canvas for each render
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        const Graph = new GraphMaker(ctx, state.graph, '#3A0A86');
+        state.graph[state.start].color = '#b8b128';
+
+        new GraphMaker(ctx, state.graph, '#3A0A86');
     });
 
     async function dfs(graph, start, visited = new Set()) {
@@ -86,7 +55,7 @@ function DepthFirstSearch(props) {
         });
     }
 
-    function handleClick(e) {
+    function handleGrab(e) {
         // get bounding rectangle of canvas
         const rect = canvasRef.current.getBoundingClientRect();
 
@@ -101,7 +70,6 @@ function DepthFirstSearch(props) {
                 setState((prev) => {
                     return { ...prev, nodeGrabbed: node };
                 });
-                console.log(node);
                 break;
             }
         }
@@ -130,12 +98,47 @@ function DepthFirstSearch(props) {
         });
     }
 
+    function handleClick(e) {
+        // get bounding rectangle of canvas
+        const rect = canvasRef.current.getBoundingClientRect();
+
+        // get x and y coordinates of click relative to canvas
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;   
+        
+        // check if click is within a node
+        for (let node in state.graph) {
+            const nodeObj = state.graph[node];
+            if (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25) {
+                setState((prev) => {
+                    return { 
+                        ...prev, 
+                        start: node,
+                        graph: {
+                            ...prev.graph,
+                            [node]: {
+                                ...prev.graph[node],
+                                color: '#b8b128'
+                            },
+                            [prev.start]: {
+                                ...prev.graph[prev.start],
+                                color: null               
+                            }
+                        }
+                    };
+                });
+                break;
+            }
+        }
+    }
+
     function reset() {
         setState((prev) => {
             return {
                 ...prev,
                 visited: new Set(),
-                graph: graph
+                graph: graph,
+                start: 'H'
             };
         });
     }
@@ -145,16 +148,17 @@ function DepthFirstSearch(props) {
             <h3>DFS</h3>
             <div className='flex align-center justify-center'>
                 <canvas 
-                    onMouseDown={handleClick} 
+                    onMouseDown={handleGrab} 
                     onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
                     onMouseMove={handleDrag}
+                    onClick={handleClick}
                     ref={canvasRef} 
                     width="185" 
                     height="130" 
                 />
             </div>
             <div className="flex space-between search-buttons-container">
-                <button onClick={() => dfs(state.graph, 'A')}>Search</button>
+                <button onClick={() => dfs(state.graph, state.start)}>Search</button>
                 <button onClick={reset}>Reset</button>
             </div>
         </div>
@@ -162,3 +166,46 @@ function DepthFirstSearch(props) {
 }
 
 export default DepthFirstSearch;
+
+const graph = {
+    'A': {
+        x: 0,
+        y: 0,
+        neighbors: ['B', 'C']
+    },
+    'B': {
+        x: 80,
+        y: 0,
+        neighbors: ['D', 'E', 'A']
+    },
+    'C': {
+        x: 0,
+        y: 50,
+        neighbors: ['H', 'A']
+    },
+    'D': {
+        x: 80,
+        y: 50,
+        neighbors: ['B']
+    },
+    'E': {
+        x: 160,
+        y: 0,
+        neighbors: ['F', 'B']
+    },
+    'F': {
+        x: 160,
+        y: 50,
+        neighbors: ['G', 'H', 'E']
+    },
+    'G': {
+        x: 160,
+        y: 100,
+        neighbors: ['F']
+    },
+    'H': {
+        x: 80,
+        y: 100,
+        neighbors: ['C', 'F']
+    }
+};
