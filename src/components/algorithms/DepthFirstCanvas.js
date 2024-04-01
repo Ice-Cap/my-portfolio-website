@@ -4,9 +4,6 @@ import { delay } from '../../utils/utils';
 
 function DepthFirstSearch(props) {
     const [state, setState] = useState({
-        currIndex: null,
-        needle: 14,
-        visited: new Set(),
         nodeGrabbed: null,
         graph: graph,
         start: 'H'
@@ -55,9 +52,7 @@ function DepthFirstSearch(props) {
          */
         setState((prev) => {
             return { 
-                ...prev, 
-                currIndex: start, 
-                visited: visited,
+                ...prev,
                 graph: {
                     ...prev.graph,
                     [start]: {
