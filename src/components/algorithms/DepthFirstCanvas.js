@@ -2,45 +2,47 @@ import React, { useEffect, useRef, useState } from 'react';
 import GraphMaker from '../../utils/GraphMaker';
 import { delay } from '../../utils/utils';
 
+const graph = {
+    'A': {
+        x: 0,
+        y: 0,
+        color: '#b8b128',
+        neighbors: ['B', 'C']
+    },
+    'B': {
+        x: 50,
+        y: 0,
+        neighbors: ['D', 'E']
+    },
+    'C': {
+        x: 0,
+        y: 50,
+        neighbors: ['B']
+    },
+    'D': {
+        x: 50,
+        y: 50,
+        neighbors: []
+    },
+    'E': {
+        x: 100,
+        y: 0,
+        neighbors: ['F']
+    },
+    'F': {
+        x: 100,
+        y: 50,
+        neighbors: []
+    }
+};
+
 function DepthFirstSearch(props) {
     const [state, setState] = useState({
         currIndex: null,
         needle: 14,
         visited: new Set(),
         nodeGrabbed: null,
-        graph: {
-            'A': {
-                x: 0,
-                y: 0,
-                color: '#b8b128',
-                neighbors: ['B', 'C']
-            },
-            'B': {
-                x: 50,
-                y: 0,
-                neighbors: ['D', 'E']
-            },
-            'C': {
-                x: 0,
-                y: 50,
-                neighbors: ['B']
-            },
-            'D': {
-                x: 50,
-                y: 50,
-                neighbors: []
-            },
-            'E': {
-                x: 100,
-                y: 0,
-                neighbors: ['F']
-            },
-            'F': {
-                x: 100,
-                y: 50,
-                neighbors: []
-            }
-        }
+        graph: graph
     });
     const canvasRef = useRef();
 
@@ -128,6 +130,16 @@ function DepthFirstSearch(props) {
         });
     }
 
+    function reset() {
+        setState((prev) => {
+            return {
+                ...prev,
+                visited: new Set(),
+                graph: graph
+            };
+        });
+    }
+
     return (
         <div className='algo search'>
             <h3>DFS</h3>
@@ -143,7 +155,7 @@ function DepthFirstSearch(props) {
             </div>
             <div className="flex space-between search-buttons-container">
                 <button onClick={() => dfs(state.graph, 'A')}>Search</button>
-                <button onClick={() => { }}>Reset</button>
+                <button onClick={reset}>Reset</button>
             </div>
         </div>
     );
