@@ -7,9 +7,9 @@ function SortAlgorithm(props) {
             <div className='array-container'>
                 {props.display}
             </div>
-            <div className="flex space-between">
-                <button onClick={() => props.sort()}>Sort</button>
+            <div className="flex space-between buttons-container">
                 <button onClick={() => props.reset()}>Reset</button>
+                <button onClick={() => props.sort()}>Sort</button>
             </div>
         </div>
     );

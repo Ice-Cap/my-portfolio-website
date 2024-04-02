@@ -7,9 +7,9 @@ function SortAlgorithm(props) {
             <div className='search-container'>
                 {props.display}
             </div>
-            <div className="flex space-between search-buttons-container">
-                <button onClick={() => props.search()}>Search</button>
+            <div className="flex space-between buttons-container">
                 <button onClick={() => props.reset()}>Reset</button>
+                <button onClick={() => props.search()}>Search</button>
             </div>
         </div>
     );
