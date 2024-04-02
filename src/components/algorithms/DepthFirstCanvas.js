@@ -185,9 +185,9 @@ function DepthFirstSearch(props) {
                     height="130" 
                 />
             </div>
-            <div className="flex space-between search-buttons-container">
-                <button onClick={() => dfs(state.graph, state.start)}>Search</button>
+            <div className="flex space-between buttons-container">
                 <button onClick={reset}>Reset</button>
+                <button onClick={() => dfs(state.graph, state.start)}>Search</button>
             </div>
         </div>
     );
