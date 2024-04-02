@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import GraphMaker from '../../utils/GraphMaker';
-import { delay } from '../../utils/utils';
+import { delay, cloneObject } from '../../utils/utils';
 
 function DepthFirstSearch(props) {
     const [state, setState] = useState({
@@ -25,7 +25,8 @@ function DepthFirstSearch(props) {
         state.graph[state.start].color = '#b8b128';
 
         /**
-         * Create graph on canvas.
+         * Create graph on canvas on each render
+         * to show updated state.
          */
         new GraphMaker(ctx, state.graph, '#3A0A86');
     });
@@ -51,16 +52,9 @@ function DepthFirstSearch(props) {
          * Update each visited node to be yellow.
          */
         setState((prev) => {
-            return { 
-                ...prev,
-                graph: {
-                    ...prev.graph,
-                    [start]: {
-                        ...prev.graph[start],
-                        color: '#b8b128'
-                    }
-                }
-            };
+            const temp = cloneObject(prev);
+            temp.graph[start].color = '#b8b128';
+            return temp;
         });
 
         /**
@@ -93,7 +87,9 @@ function DepthFirstSearch(props) {
          */
         for (let node in state.graph) {
             const nodeObj = state.graph[node];
-            if (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25) {
+
+            const inNodeBounds = (x >= nodeObj.x && x <= nodeObj.x + 25 && y >= nodeObj.y && y <= nodeObj.y + 25);
+            if (inNodeBounds) {
                 setState((prev) => {
                     return { ...prev, nodeGrabbed: node };
                 });
@@ -117,17 +113,10 @@ function DepthFirstSearch(props) {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         setState((prev) => {
-            return {
-                ...prev,
-                graph: {
-                    ...prev.graph,
-                    [prev.nodeGrabbed]: {
-                        ...prev.graph[prev.nodeGrabbed],
-                        x: x,
-                        y: y
-                    }
-                }
-            };
+            const temp = cloneObject(prev);
+            temp.graph[prev.nodeGrabbed].x = x;
+            temp.graph[prev.nodeGrabbed].y = y;
+            return temp;
         });
     }
 
@@ -157,21 +146,11 @@ function DepthFirstSearch(props) {
                  * and update start colors accordingly.
                  */
                 setState((prev) => {
-                    return { 
-                        ...prev, 
-                        start: node,
-                        graph: {
-                            ...prev.graph,
-                            [node]: {
-                                ...prev.graph[node],
-                                color: '#b8b128'
-                            },
-                            [prev.start]: {
-                                ...prev.graph[prev.start],
-                                color: null               
-                            }
-                        }
-                    };
+                    const temp = cloneObject(prev);
+                    temp.graph[prev.start].color = null;
+                    temp.start = node;
+                    temp.graph[node].color = '#b8b128';
+                    return temp;
                 });
                 break;
             }
@@ -186,7 +165,7 @@ function DepthFirstSearch(props) {
             return {
                 ...prev,
                 visited: new Set(),
-                graph: graph,
+                graph: graphClone,
                 start: 'H'
             };
         });
@@ -258,3 +237,9 @@ const graph = {
         neighbors: ['C', 'F']
     }
 };
+
+/**
+ * Cloning the graph object
+ * to preserve the original state.
+ */
+const graphClone = cloneObject(graph);
