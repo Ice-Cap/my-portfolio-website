@@ -24,7 +24,7 @@
       margin: 0 1.5%;
       border: 1px solid $accent-color;
       height: 300px;
-      animation: blink 2s ease-in-out 1.5s infinite alternate forwards;
+    //   animation: blink 2s ease-in-out 1.5s infinite alternate forwards;
     }
 
     &::after {
@@ -36,7 +36,7 @@
       margin: 0 1.5%;
       border: 1px solid $accent-color;
       height: 300px;
-      animation: blink 2s ease-in-out infinite alternate forwards;
+    //   animation: blink 2s ease-in-out infinite alternate forwards;
     }
   }
 
@@ -59,6 +59,7 @@
     padding-bottom: 2rem;
 
     .project-card {
+      max-width: 400px;
       width: 25%;
       height: 500px;
       background-color: darken($secondary-color-200, 5%);
@@ -73,7 +74,7 @@
         transform: scale(1.05);
         box-shadow: 0 0 12px #9b82bf56;
       }
-     
+
       .thumbnail {
         height: 180px;
 
@@ -168,7 +169,7 @@
     }
   }
 
-  //  Small Screens  // 
+  //  Small Screens  //
   @media screen and (max-width: 700px) {
     .background-design {
       display: none;
