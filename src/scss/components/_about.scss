@@ -1,13 +1,13 @@
 #about {
     padding: 2rem 0;
-    background-color: #301154;
+    background-color: $primary-color-300;
 
     .section-heading {
         h2 {
             &::after {
                 content: 'About Me';
                 position: absolute;
-                background-color: #301154;
+                background-color: $primary-color-300;
             }
         }
     }
