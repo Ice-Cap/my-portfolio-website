@@ -24,14 +24,14 @@ function About() {
                             In mid 2021 I began doing freelance web development through Upwork. During this time I made websites from scratch for clients and worked on some established websites as well. I gained invaluable experience during this time. Some of the most important concepts I learned were how to communicate technical concepts effectively, how to build complex designs based on mockups designed by someone else, and how to manage time effeciently in order to meet deadlines proposed by clients.
                         </p>
                         <p>
-                            After my time freelancing, I began working at DentalQore. I started as a tech support agent, and was promoted to a full stack developer after around 8 months. The experience I gained in this role was immense. I had the opportunity to work on a wide range of full stack projects and worked with some brilliant people who taught me a lot. 
+                            After my time freelancing, I began working at DentalQore. I started as a tech support agent, and was promoted to a full stack developer after around 8 months. The experience I gained in this role was immense. I had the opportunity to work on a wide range of full stack projects and worked with some brilliant people who taught me a lot.
                         </p>
                         <a href={resume} target="_blank" rel="noopener noreferrer">
                             My Resume
                         </a>
                     </div>
                     <div className="cube">
-                        <Cube color={0x1D0543} size={350} />
+                        <Cube color={0xffffff} size={350} />
                     </div>
                 </div>
             </div>
