@@ -17,9 +17,9 @@ class GraphMaker {
                 const neighborObj = this.graph[neighbor];
                 const centerOffset = this.nodeSize / 2;
                 this.createLine(
-                    nodeObj.x + centerOffset, 
-                    nodeObj.y + centerOffset, 
-                    neighborObj.x + centerOffset, 
+                    nodeObj.x + centerOffset,
+                    nodeObj.y + centerOffset,
+                    neighborObj.x + centerOffset,
                     neighborObj.y + centerOffset
                 );
             }
@@ -38,6 +38,7 @@ class GraphMaker {
     }
 
     createLine(x1, y1, x2, y2) {
+        this.ctx.strokeStyle = '#fff';
         this.ctx.beginPath();
         this.ctx.moveTo(x1, y1);
         this.ctx.lineTo(x2, y2);
