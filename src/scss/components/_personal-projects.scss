@@ -20,18 +20,19 @@
         }
 
         .project-card:first-child .thumbnail {
-            background: url('../../images/poketeambuilder-screenshot.png');
-            @include thumbnail-styles;
-        }
-
-        .project-card:nth-child(2) .thumbnail {
             background: url('../../images/level-up-live.png');
             @include thumbnail-styles;
         }
 
-        .project-card:last-child .thumbnail {
+        .project-card:nth-child(2) .thumbnail {
             background: url('../../images/graphmaker-screenshot.png');
             @include thumbnail-styles;
+        }
+
+        .project-card:last-child .thumbnail {
+            background: url('../../images/poketeambuilder-screenshot.png');
+            @include thumbnail-styles;
+
         }
     }
 }

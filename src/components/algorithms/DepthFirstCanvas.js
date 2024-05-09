@@ -22,26 +22,26 @@ function DepthFirstSearch(props) {
         /**
          * Update the start node to be yellow.
          */
-        state.graph[state.start].color = '#b8b128';
+        state.graph[state.start].color = '#9a81c3';
 
         /**
          * Create graph on canvas on each render
          * to show updated state.
          */
-        new GraphMaker(ctx, state.graph, '#3A0A86');
+        new GraphMaker(ctx, state.graph, '#fff');
     });
 
     /**
-     * Depth-first search is an algorithm for traversing 
+     * Depth-first search is an algorithm for traversing
      * or searching tree or graph data structures.
-     * The algorithm starts at the root node and explores 
+     * The algorithm starts at the root node and explores
      * as far as possible along each branch before backtracking.
-     * 
+     *
      * Time Complexity: O(V + E)
-     * 
-     * @param {object} graph 
-     * @param {string} start 
-     * @param {object} visited 
+     *
+     * @param {object} graph
+     * @param {string} start
+     * @param {object} visited
      */
     async function dfs(graph, start, visited = new Set()) {
         visited.add(start); // Mark the current node as visited
@@ -53,7 +53,7 @@ function DepthFirstSearch(props) {
          */
         setState((prev) => {
             const temp = cloneObject(prev);
-            temp.graph[start].color = '#b8b128';
+            temp.graph[start].color = '#9a81c3';
             return temp;
         });
 
@@ -70,8 +70,8 @@ function DepthFirstSearch(props) {
 
     /**
      * This will handle grabbing a node on the canvas.
-     * 
-     * @param {object} e 
+     *
+     * @param {object} e
      */
     function handleGrab(e) {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -80,8 +80,8 @@ function DepthFirstSearch(props) {
          * get x and y coordinates of click relative to canvas
          */
         const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;   
-        
+        const y = e.clientY - rect.top;
+
         /**
          * Check if click is within a node
          */
@@ -101,7 +101,7 @@ function DepthFirstSearch(props) {
     /**
      * This will handle dragging a node on the canvas.
      * Dragging a node will update it's x and y coordinates.
-     * 
+     *
      * @param {object} e
      */
     function handleDrag(e) {
@@ -123,8 +123,8 @@ function DepthFirstSearch(props) {
     /**
      * This will change the start node of the graph
      * to be the node that was clicked.
-     * 
-     * @param {object} e 
+     *
+     * @param {object} e
      */
     function changeStartNode(e) {
         const rect = canvasRef.current.getBoundingClientRect();
@@ -133,8 +133,8 @@ function DepthFirstSearch(props) {
          * get x and y coordinates of click relative to canvas
          */
         const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;   
-        
+        const y = e.clientY - rect.top;
+
         /**
          * Check if click is within a node
          */
@@ -175,14 +175,14 @@ function DepthFirstSearch(props) {
         <div className='algo search'>
             <h3>DFS</h3>
             <div className='flex align-center justify-center'>
-                <canvas 
-                    onMouseDown={handleGrab} 
+                <canvas
+                    onMouseDown={handleGrab}
                     onMouseUp={() => setState((prev) => ({ ...prev, nodeGrabbed: null }))}
                     onMouseMove={handleDrag}
                     onClick={changeStartNode}
-                    ref={canvasRef} 
-                    width="185" 
-                    height="130" 
+                    ref={canvasRef}
+                    width="185"
+                    height="130"
                 />
             </div>
             <div className="flex space-between buttons-container">

@@ -10,14 +10,6 @@ function PersonalProjects() {
             <div className="background-design"></div>
             <div className="projects-container">
                 <ProjectCard
-                    title={'Poké Team Builder'}
-                    shortDescription={'A Pokémon team builder'}
-                    previewLink={'https://poketeambuilder.io/'}
-                    codeLink={'https://github.com/Ice-Cap/poke-team-builder'}
-                    technologiesUsed={'Built with React, CSS, and PokeAPI.'}
-                    fullDescription={'This is a pokémon team builder that helps people build better teams for competetive pokémon.'}
-                />
-                <ProjectCard
                     title={'Level Up'}
                     shortDescription={'A browser based productivity app'}
                     previewLink={'https://leveluptimetracker.com/'}
@@ -32,6 +24,14 @@ function PersonalProjects() {
                     codeLink={'https://github.com/Ice-Cap/graph-maker'}
                     technologiesUsed={'Built with React, Typescript, and the Canvas API.'}
                     fullDescription={'This is a simple browser based graph maker that allows users to create graphs with nodes and edges.'}
+                />
+                <ProjectCard
+                    title={'Poké Team Builder'}
+                    shortDescription={'A Pokémon team builder'}
+                    previewLink={'https://poketeambuilder.io/'}
+                    codeLink={'https://github.com/Ice-Cap/poke-team-builder'}
+                    technologiesUsed={'Built with React, CSS, and PokeAPI.'}
+                    fullDescription={'This is a pokémon team builder that helps people build better teams for competetive pokémon.'}
                 />
             </div>
         </section>

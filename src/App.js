@@ -11,7 +11,6 @@ function App() {
             <Introduction />
             <PersonalProjects />
             <Algorithms />
-            <ProfessionalProjects />
             <About />
             <Contact />
         </main>
