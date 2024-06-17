@@ -1,6 +1,6 @@
 import React from 'react';
 import Cube from './UI/Cube';
-import resume from '../images/Resume-2024.pdf';
+import resume from '../images/Resume-new.pdf';
 
 function About() {
     return (
